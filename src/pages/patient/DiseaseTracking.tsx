@@ -1,0 +1,125 @@
+import { motion } from 'framer-motion';
+import { Activity, TrendingUp, CheckCircle2 } from 'lucide-react';
+
+const DiseaseTracking = () => {
+    return (
+        <div className="w-full max-w-7xl mx-auto">
+            <div className="mb-8">
+                <h1 className="text-3xl font-bold text-gray-800">Chronic Disease Tracking</h1>
+                <p className="text-gray-500 mt-2">Monitor your long-term health metrics and progress.</p>
+            </div>
+
+            <div className="grid gap-8">
+                {/* Diabetes Tracker */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100"
+                >
+                    <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-4">
+                        <div>
+                            <div className="flex items-center gap-3 mb-1">
+                                <h2 className="text-xl font-bold text-gray-800">Type 2 Diabetes</h2>
+                                <span className="text-xs font-bold bg-primary-100 text-primary-700 px-2 py-1 rounded-md">MONITORED</span>
+                            </div>
+                            <p className="text-sm text-gray-500">Last checkup: 2 days ago</p>
+                        </div>
+                        <button className="text-primary-600 font-medium text-sm hover:bg-primary-50 px-4 py-2 rounded-lg transition-colors">
+                            Update Metrics
+                        </button>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                        <div className="p-4 bg-gray-50 rounded-xl">
+                            <p className="text-sm text-gray-500 mb-1">Fasting Blood Sugar</p>
+                            <p className="text-2xl font-bold text-gray-800">110 <span className="text-sm font-normal text-gray-400">mg/dL</span></p>
+                            <div className="mt-2 flex items-center gap-1 text-xs text-green-600 font-medium">
+                                <TrendingUp className="w-3 h-3" />
+                                <span>Stable within range</span>
+                            </div>
+                        </div>
+                        <div className="p-4 bg-gray-50 rounded-xl">
+                            <p className="text-sm text-gray-500 mb-1">Post-Prandial</p>
+                            <p className="text-2xl font-bold text-gray-800">145 <span className="text-sm font-normal text-gray-400">mg/dL</span></p>
+                            <div className="mt-2 flex items-center gap-1 text-xs text-emerald-600 font-medium">
+                                <TrendingUp className="w-3 h-3" />
+                                <span>-5% from last week</span>
+                            </div>
+                        </div>
+                        <div className="p-4 bg-gray-50 rounded-xl">
+                            <p className="text-sm text-gray-500 mb-1">HbA1c</p>
+                            <p className="text-2xl font-bold text-gray-800">5.7 <span className="text-sm font-normal text-gray-400">%</span></p>
+                            <div className="mt-2 flex items-center gap-1 text-xs text-green-600 font-medium">
+                                <CheckCircle2 className="w-3 h-3" />
+                                <span>Excellent Control</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Simple Visualization Placeholder */}
+                    <div className="relative h-64 bg-slate-50 rounded-xl border-dashed border-2 border-slate-200 flex items-center justify-center">
+                        <div className="absolute inset-x-8 bottom-8 top-8 flex items-end justify-between gap-2">
+                            {[40, 45, 30, 60, 55, 45, 50].map((h, i) => (
+                                <div key={i} className="w-full bg-primary-500 rounded-t-sm opacity-80 hover:opacity-100 transition-opacity" style={{ height: `${h}%` }}></div>
+                            ))}
+                        </div>
+                        <p className="absolute top-4 left-6 text-xs text-primary-400 font-bold uppercase tracking-wider">Weekly Sugar Levels Trend</p>
+                    </div>
+                </motion.div>
+
+                {/* Medication Adherence */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.1 }}
+                    className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100"
+                >
+                    <h2 className="text-xl font-bold text-gray-800 mb-6 flex items-center gap-2">
+                        <Activity className="w-5 h-5 text-emerald-600" />
+                        Medication Adherence
+                    </h2>
+
+                    <div className="space-y-4">
+                        <div className="flex items-center justify-between p-4 bg-gray-50 rounded-xl border border-gray-100">
+                            <div className="flex items-center gap-4">
+                                <div className="w-10 h-10 rounded-full bg-primary-100 flex items-center justify-center text-primary-600 font-bold">M</div>
+                                <div>
+                                    <h3 className="font-bold text-gray-800">Metformin</h3>
+                                    <p className="text-sm text-gray-500">500mg • After Breakfast</p>
+                                </div>
+                            </div>
+                            <div className="flex gap-2">
+                                {[1, 1, 1, 1, 1, 0, 0].map((taken, i) => (
+                                    <div key={i} className={`w-8 h-8 rounded-lg flex items-center justify-center text-xs font-bold ${taken ? 'bg-emerald-100 text-emerald-600' : 'bg-gray-200 text-gray-400'
+                                        }`}>
+                                        {['M', 'T', 'W', 'T', 'F', 'S', 'S'][i]}
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+
+                        <div className="flex items-center justify-between p-4 bg-gray-50 rounded-xl border border-gray-100">
+                            <div className="flex items-center gap-4">
+                                <div className="w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center text-orange-600 font-bold">I</div>
+                                <div>
+                                    <h3 className="font-bold text-gray-800">Insulin Glargine</h3>
+                                    <p className="text-sm text-gray-500">20 Units • Before Bed</p>
+                                </div>
+                            </div>
+                            <div className="flex gap-2">
+                                {[1, 1, 1, 1, 0, 0, 0].map((taken, i) => (
+                                    <div key={i} className={`w-8 h-8 rounded-lg flex items-center justify-center text-xs font-bold ${taken ? 'bg-emerald-100 text-emerald-600' : 'bg-gray-200 text-gray-400'
+                                        }`}>
+                                        {['M', 'T', 'W', 'T', 'F', 'S', 'S'][i]}
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </motion.div>
+            </div>
+        </div>
+    );
+};
+
+export default DiseaseTracking;
