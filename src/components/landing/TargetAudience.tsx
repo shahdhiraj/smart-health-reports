@@ -1,6 +1,6 @@
 import { motion, useMotionTemplate, useMotionValue } from 'framer-motion';
 import { Users, Stethoscope, Building, ShieldPlus, Landmark, TestTube2 } from 'lucide-react';
-import { MouseEvent } from 'react';
+import type { MouseEvent } from 'react';
 import AnimatedSectionHeader from './ui/AnimatedSectionHeader';
 
 const AudienceCard = ({ aud, isDark, index }: any) => {

@@ -1,5 +1,6 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef, ReactNode } from 'react';
+import { useRef } from 'react';
+import type { ReactNode } from 'react';
 
 interface Props {
     title: ReactNode;

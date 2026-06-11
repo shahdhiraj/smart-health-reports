@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Watch, Pill, Globe, Smartphone, Activity } from 'lucide-react';
+import { Watch, Pill, Globe, Smartphone } from 'lucide-react';
 
 const FutureIntegrations = ({ isDark }: { isDark: boolean }) => {
     return (

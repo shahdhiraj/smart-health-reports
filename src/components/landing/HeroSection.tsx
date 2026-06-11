@@ -24,11 +24,10 @@ const HeroSection = ({ isDark, isReady }: { isDark: boolean; isReady: boolean })
 
     const letterVariants = {
         hidden: { opacity: 0, y: 20, filter: 'blur(10px)' },
-        visible: { opacity: 1, y: 0, filter: 'blur(0px)', transition: { duration: 0.4, ease: "easeOut" } }
+        visible: { opacity: 1, y: 0, filter: 'blur(0px)', transition: { duration: 0.4 } }
     };
 
     const text1 = "Health Data".split('');
-    const text2 = "Reimagined.".split('');
 
     return (
         <section ref={ref} className="relative min-h-[90vh] flex flex-col items-center justify-center overflow-hidden">

@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Activity, Calendar, Pill, TrendingUp, Clock, FileText, Heart, Moon, ChevronRight } from 'lucide-react';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip as RechartsTooltip, ResponsiveContainer, BarChart, Bar, Cell, PieChart, Pie, Legend } from 'recharts';
@@ -30,6 +31,7 @@ const healthBreakdown = [
 ];
 
 const PatientDashboard = () => {
+    const navigate = useNavigate();
     const stats = [
         { label: 'Upcoming Consults', value: '2', icon: Calendar, color: 'blue' },
         { label: 'Active Prescriptions', value: '4', icon: Pill, color: 'emerald' },
@@ -74,11 +76,13 @@ const PatientDashboard = () => {
                     </motion.p>
                 </div>
                 <motion.button
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    className="bg-primary-500 text-white px-6 py-3 rounded-2xl text-sm font-medium hover:bg-primary-600 transition-colors shadow-sm shadow-primary-500/20"
+                    onClick={() => navigate('/patient/consultations')}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="flex items-center gap-2 bg-gradient-to-tr from-primary-600 to-primary-400 text-white px-6 py-3 rounded-2xl text-sm font-semibold hover:from-primary-500 hover:to-primary-300 transition-all shadow-lg shadow-primary-500/30 hover:shadow-primary-500/50 group"
                 >
                     Book Consultation
+                    <Calendar className="w-4 h-4 group-hover:scale-110 transition-transform" />
                 </motion.button>
             </div>
 

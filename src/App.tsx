@@ -17,6 +17,7 @@ import MenstruationCycle from './pages/patient/MenstruationCycle';
 import Timeline from './pages/patient/Timeline';
 import FamilyHealth from './pages/patient/FamilyHealth';
 import PrivacySettings from './pages/patient/PrivacySettings';
+import WearablesSync from './pages/patient/WearablesSync';
 import DoctorDashboard from './pages/doctor/DoctorDashboard';
 import AdminDashboard from './pages/admin/AdminDashboard';
 
@@ -60,6 +61,7 @@ function App() {
             <Route path="/patient/timeline" element={<Timeline />} />
             <Route path="/patient/family" element={<FamilyHealth />} />
             <Route path="/patient/privacy" element={<PrivacySettings />} />
+            <Route path="/patient/wearables" element={<WearablesSync />} />
             <Route path="/doctor" element={<DoctorDashboard />} />
             <Route path="/doctor/dashboard" element={<Navigate to="/doctor" replace />} />
             <Route path="/doctor/patients" element={<PatientList />} />

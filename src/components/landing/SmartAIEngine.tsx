@@ -1,5 +1,5 @@
 import { motion, useMotionTemplate, useMotionValue } from 'framer-motion';
-import { MouseEvent } from 'react';
+import type { MouseEvent } from 'react';
 import { Brain, ActivitySquare, Mic, Apple, HeartPulse, PieChart } from 'lucide-react';
 import AnimatedSectionHeader from './ui/AnimatedSectionHeader';
 

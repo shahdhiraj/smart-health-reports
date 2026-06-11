@@ -5,7 +5,7 @@ import {
     Menu, LogOut,
     LayoutDashboard, Stethoscope,
     Users, Building2, User, Pill, FileText,
-    Utensils, Activity, Bell, Trash2, X, Search, RotateCcw, Heart, History, ShieldCheck
+    Utensils, Activity, Bell, Trash2, X, Search, RotateCcw, Heart, History, ShieldCheck, Watch, Scan, ChevronLeft, ChevronRight
 } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { useHealth } from '../context/HealthContext';
@@ -52,12 +52,14 @@ const MainLayout = () => {
             { path: '/patient/timeline', icon: History, label: 'Health Timeline' },
             { path: '/patient/menstruation-cycle', icon: Heart, label: 'Menstruation Cycle' },
             { path: '/patient/family', icon: Users, label: 'Family Health' },
+            { path: '/patient/wearables', icon: Watch, label: 'Device Sync' },
             { path: '/patient/privacy', icon: ShieldCheck, label: 'Security & Privacy' },
         ],
         doctor: [
             { path: '/doctor', icon: LayoutDashboard, label: 'Dashboard' },
             { path: '/doctor/patients', icon: Users, label: 'My Patients' },
             { path: '/doctor/prescriptions', icon: Pill, label: 'ePrescriptions' },
+            { path: '/doctor/imaging', icon: Scan, label: 'AI Imaging' },
             { path: '/doctor/consultations', icon: Stethoscope, label: 'Consultations' },
         ],
         admin: [
@@ -106,6 +108,13 @@ const MainLayout = () => {
                     </div>
                 </div>
 
+                <button
+                    onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+                    className="absolute -right-3.5 top-8 p-1.5 bg-white border border-gray-200 shadow-sm rounded-lg text-primary-500 hover:text-primary-600 hover:bg-primary-50 transition-colors hidden md:block z-50"
+                >
+                    {isSidebarOpen ? <ChevronLeft className="w-4 h-4" /> : <ChevronRight className="w-4 h-4" />}
+                </button>
+
                 <nav className="flex-1 px-4 py-6 space-y-2">
                     {roleMenuItems.map((item) => {
                         const isActive = location.pathname === item.path;
@@ -136,16 +145,10 @@ const MainLayout = () => {
                 </div>
             </motion.aside>
 
-            {/* Main Content */}
+        {/* Main Content */}
             <main className={`flex-1 transition-all duration-300 ${isSidebarOpen ? 'md:ml-[280px]' : 'md:ml-[80px]'}`}>
                 {/* Top Header */}
-                <header className="bg-white/80 backdrop-blur-md sticky top-0 z-20 border-b border-gray-200 px-6 md:px-16 lg:px-24 py-4 flex items-center justify-between">
-                    <button
-                        onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-                        className="p-2 hover:bg-gray-100 rounded-lg hidden md:block"
-                    >
-                        <Menu className="w-5 h-5 text-gray-600" />
-                    </button>
+                <header className="bg-white/80 backdrop-blur-md sticky top-0 z-20 border-b border-gray-200 px-6 md:px-16 lg:px-24 py-4 flex items-center justify-between md:justify-end">
 
                     <div className="flex items-center gap-4">
                         <button 
