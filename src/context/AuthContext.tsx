@@ -1,7 +1,7 @@
 import { createContext, useContext, useState } from 'react';
 import type { ReactNode } from 'react';
 
-export type UserRole = 'admin' | 'doctor' | 'patient';
+export type UserRole = 'admin' | 'doctor' | 'patient' | 'pharmacist' | 'technician' | 'billing';
 
 interface User {
     id: string;
@@ -24,11 +24,21 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
     const login = (role: UserRole) => {
         // Mock login logic
+        let name = '';
+        switch(role) {
+            case 'admin': name = 'System Admin'; break;
+            case 'doctor': name = 'Dr. Sarah Smith'; break;
+            case 'pharmacist': name = 'David Pharm'; break;
+            case 'technician': name = 'Lisa Lab'; break;
+            case 'billing': name = 'Robert Accounts'; break;
+            default: name = 'John Doe';
+        }
+
         const mockUser: User = {
-            id: '1',
-            name: role === 'admin' ? 'Admin User' : role === 'doctor' ? 'Dr. Smith' : 'John Doe',
+            id: Math.random().toString(36).substr(2, 9),
+            name,
             role,
-            email: `${role}@example.com`,
+            email: `${role}@smarthealth.com`,
         };
         setUser(mockUser);
     };

@@ -24,7 +24,7 @@ const AuditLogs = () => {
         <div className="w-full">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
                 <div>
-                    <h1 className="text-3xl font-bold text-gray-800">Audit Logs</h1>
+                    <h1 className="page-title">Audit Logs</h1>
                     <p className="text-gray-500 mt-2">Monitor system activity and security events.</p>
                 </div>
                 <button className="flex items-center gap-2 bg-white border border-gray-200 text-gray-600 px-4 py-2.5 rounded-xl hover:bg-gray-50 transition-colors font-medium">
@@ -73,7 +73,7 @@ const AuditLogs = () => {
                                 >
                                     <td className="py-4 px-6">
                                         <div className="flex items-center gap-3">
-                                            <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 font-bold text-xs">
+                                            <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 font-medium text-xs">
                                                 {log.user.charAt(0)}
                                             </div>
                                             <span className="font-medium text-gray-900 text-sm">{log.user}</span>
@@ -89,7 +89,7 @@ const AuditLogs = () => {
                                         {log.timestamp}
                                     </td>
                                     <td className="py-4 px-6 text-right">
-                                        <span className={`px-2.5 py-1 rounded-full text-xs font-bold uppercase tracking-wide ${getLevelColor(log.level)}`}>
+                                        <span className={`px-2.5 py-1 rounded-full text-xs font-medium uppercase tracking-wide ${getLevelColor(log.level)}`}>
                                             {log.level}
                                         </span>
                                     </td>

@@ -23,7 +23,7 @@ const UserManagement = () => {
         <div className="w-full">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
                 <div>
-                    <h1 className="text-3xl font-bold text-gray-800">User Management</h1>
+                    <h1 className="page-title">User Management</h1>
                     <p className="text-gray-500 mt-2">Manage system access for doctors and patients.</p>
                 </div>
                 <Button className="gap-2 shadow-lg shadow-primary-200">

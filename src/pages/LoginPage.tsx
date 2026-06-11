@@ -25,13 +25,11 @@ const LoginPage = () => {
     };
 
     const itemVariants: Variants = {
-        hidden: { y: 20, opacity: 0 },
+        hidden: { opacity: 0 },
         visible: {
-            y: 0,
             opacity: 1,
             transition: {
-                type: 'spring',
-                stiffness: 100,
+                duration: 0.3
             },
         },
     };
@@ -53,7 +51,7 @@ const LoginPage = () => {
                         <div className="h-16 w-16 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center mb-6 shadow-inner border border-white/30">
                             <Stethoscope className="w-8 h-8 text-white" />
                         </div>
-                        <h1 className="text-4xl font-bold mb-4">Smart Health Reports</h1>
+                        <h1 className="text-4xl font-medium mb-4">Smart Health Reports</h1>
                         <p className="text-blue-100 text-lg leading-relaxed">
                             The next generation of digital healthcare. Manage reports, consultations, and prescriptions in one seamless platform.
                         </p>
@@ -63,7 +61,7 @@ const LoginPage = () => {
                 {/* Right Side - Role Selection */}
                 <div className="md:w-1/2 p-12 flex flex-col justify-center bg-white/50">
                     <motion.div variants={itemVariants} className="mb-8">
-                        <h2 className="text-3xl font-bold text-gray-800 mb-2">Welcome Back</h2>
+                        <h2 className="text-3xl font-medium text-gray-800 mb-2">Welcome Back</h2>
                         <p className="text-gray-500">Select your portal to continue</p>
                     </motion.div>
 

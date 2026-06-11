@@ -16,7 +16,7 @@ const AdminDashboard = () => {
     return (
         <div>
             <div className="mb-8">
-                <h1 className="text-3xl font-bold text-gray-800">Hospital Overview</h1>
+                <h1 className="page-title">Hospital Overview</h1>
                 <p className="text-gray-500 mt-2">System performance and key metrics.</p>
             </div>
 
@@ -29,10 +29,10 @@ const AdminDashboard = () => {
                 ].map((sys, i) => (
                     <div key={i} className="bg-white p-4 rounded-xl border border-gray-100 shadow-sm flex items-center justify-between">
                         <div>
-                            <h4 className="font-bold text-gray-800">{sys.label}</h4>
+                            <h4 className="font-medium text-gray-800">{sys.label}</h4>
                             <p className="text-xs text-gray-500">Latency: {sys.latency}</p>
                         </div>
-                        <span className={`px-3 py-1 rounded-full text-xs font-bold bg-${sys.color}-100 text-${sys.color}-700`}>
+                        <span className={`px-3 py-1 rounded-full text-xs font-medium bg-${sys.color}-100 text-${sys.color}-700`}>
                             {sys.status}
                         </span>
                     </div>
@@ -57,7 +57,7 @@ const AdminDashboard = () => {
                                 {stat.change}
                             </span>
                         </div>
-                        <h3 className="text-2xl font-bold text-gray-800">{stat.value}</h3>
+                        <h3 className="card-title">{stat.value}</h3>
                         <p className="text-gray-500 text-sm">{stat.label}</p>
                     </motion.div>
                 ))}
@@ -67,7 +67,7 @@ const AdminDashboard = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
                 {/* Disease Trend Chart */}
                 <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
-                    <h3 className="text-lg font-bold text-gray-800 mb-6">Disease Trends (Monthly)</h3>
+                    <h3 className="text-lg font-medium text-gray-800 mb-6">Disease Trends (Monthly)</h3>
                     <div className="h-[300px] w-full">
                         <ResponsiveContainer width="100%" height="100%">
                             <LineChart data={[
@@ -93,7 +93,7 @@ const AdminDashboard = () => {
 
                 {/* Risk Clustering */}
                 <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
-                    <h3 className="text-lg font-bold text-gray-800 mb-6">Patient Risk Distribution</h3>
+                    <h3 className="text-lg font-medium text-gray-800 mb-6">Patient Risk Distribution</h3>
                     <div className="h-[300px] w-full flex items-center justify-center">
                         <ResponsiveContainer width="100%" height="100%">
                             <PieChart>
@@ -121,7 +121,7 @@ const AdminDashboard = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 {/* Doctor Workload */}
                 <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
-                    <h3 className="text-lg font-bold text-gray-800 mb-6">Doctor Workload (Weekly Consults)</h3>
+                    <h3 className="text-lg font-medium text-gray-800 mb-6">Doctor Workload (Weekly Consults)</h3>
                     <div className="h-[300px] w-full">
                         <ResponsiveContainer width="100%" height="100%">
                             <BarChart data={[
@@ -143,14 +143,14 @@ const AdminDashboard = () => {
 
                 <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
                     <div className="flex items-center justify-between mb-6">
-                        <h3 className="text-lg font-bold text-gray-800">Department Status</h3>
+                        <h3 className="card-title">Department Status</h3>
                         <button className="text-primary-600 text-sm font-medium hover:underline">View All</button>
                     </div>
                     <div className="space-y-4">
                         {['Cardiology', 'Neurology', 'Pediatrics', 'Oncology', 'Orthopedics'].map((dept) => (
                             <div key={dept} className="flex items-center justify-between p-3 border border-gray-100 rounded-xl">
                                 <span className="font-medium text-gray-700">{dept}</span>
-                                <span className="px-3 py-1 bg-green-100 text-green-700 text-xs font-bold rounded-full">OPERATIONAL</span>
+                                <span className="px-3 py-1 bg-green-100 text-green-700 text-xs font-medium rounded-full">OPERATIONAL</span>
                             </div>
                         ))}
                     </div>

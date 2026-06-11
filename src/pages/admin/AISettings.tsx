@@ -17,7 +17,7 @@ const AISettings = () => {
     return (
         <div className="w-full max-w-4xl mx-auto">
             <div className="mb-8">
-                <h1 className="text-3xl font-bold text-gray-800">AI Configuration</h1>
+                <h1 className="page-title">AI Configuration</h1>
                 <p className="text-gray-500 mt-2">Manage global AI features and model parameters.</p>
             </div>
 
@@ -27,7 +27,7 @@ const AISettings = () => {
                         <div className="p-2 bg-purple-100 text-purple-600 rounded-xl">
                             <Brain className="w-6 h-6" />
                         </div>
-                        <h2 className="text-xl font-bold text-gray-800">Core AI Features</h2>
+                        <h2 className="section-title">Core AI Features</h2>
                     </div>
 
                     <div className="space-y-6">
@@ -59,15 +59,15 @@ const AISettings = () => {
 
                 <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
                     <div className="flex items-center gap-3 mb-6">
-                        <div className="p-2 bg-indigo-100 text-indigo-600 rounded-xl">
+                        <div className="p-2 bg-primary-100 text-primary-600 rounded-xl">
                             <Sparkles className="w-6 h-6" />
                         </div>
-                        <h2 className="text-xl font-bold text-gray-800">Advanced Modules</h2>
+                        <h2 className="section-title">Advanced Modules</h2>
                     </div>
 
                     <div className="space-y-6">
                         <SettingToggle
-                            icon={<Brain className="w-5 h-5 text-indigo-500" />}
+                            icon={<Brain className="w-5 h-5 text-primary-500" />}
                             title="Report Trends Analysis"
                             description="Analyze historical PDF reports for trend extraction."
                             enabled={settings.imageAnalysis}
@@ -80,7 +80,7 @@ const AISettings = () => {
                     <button className="px-6 py-3 rounded-xl border border-gray-200 text-gray-600 font-medium hover:bg-gray-50 transition-colors">
                         Reset Defaults
                     </button>
-                    <button className="flex items-center gap-2 bg-primary-600 text-white px-8 py-3 rounded-xl font-bold hover:bg-primary-700 transition-colors shadow-lg shadow-primary-200">
+                    <button className="flex items-center gap-2 bg-primary-600 text-white px-8 py-3 rounded-xl font-medium hover:bg-primary-700 transition-colors shadow-lg shadow-primary-200">
                         <Save className="w-5 h-5" />
                         Save Changes
                     </button>
@@ -97,7 +97,7 @@ const SettingToggle = ({ icon, title, description, enabled, onToggle }: any) => 
                 {icon}
             </div>
             <div>
-                <h3 className="font-bold text-gray-800">{title}</h3>
+                <h3 className="font-medium text-gray-800">{title}</h3>
                 <p className="text-sm text-gray-500 max-w-sm mt-1">{description}</p>
             </div>
         </div>

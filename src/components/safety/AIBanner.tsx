@@ -17,7 +17,7 @@ export const AIBanner = ({ className, confidence }: AIBannerProps) => {
             </div>
             <div className="flex-1">
                 <div className="flex items-center justify-between">
-                    <h4 className="font-bold text-violet-900 text-sm flex items-center gap-2">
+                    <h4 className="font-medium text-violet-900 text-sm flex items-center gap-2">
                         AI-Generated Insight
                         {confidence && (
                             <span className={cn(

@@ -10,7 +10,7 @@ const SettingsPage = () => {
     return (
         <div className="w-full max-w-4xl mx-auto">
             <div className="mb-8">
-                <h1 className="text-3xl font-bold text-gray-800">Settings</h1>
+                <h1 className="page-title">Settings</h1>
                 <p className="text-gray-500 mt-2">Manage your application preferences and account settings.</p>
             </div>
 
@@ -42,7 +42,7 @@ const SettingsPage = () => {
                             <div className="p-2 bg-blue-100 text-blue-600 rounded-xl">
                                 <Bell className="w-5 h-5" />
                             </div>
-                            <h2 className="text-lg font-bold text-gray-800">Notifications</h2>
+                            <h2 className="section-title">Notifications</h2>
                         </div>
                         <div className="space-y-4">
                             <div className="flex items-center justify-between">
@@ -66,7 +66,7 @@ const SettingsPage = () => {
                             <div className="p-2 bg-green-100 text-green-600 rounded-xl">
                                 <Lock className="w-5 h-5" />
                             </div>
-                            <h2 className="text-lg font-bold text-gray-800">Security</h2>
+                            <h2 className="section-title">Security</h2>
                         </div>
                         <div className="space-y-4">
                             <button className="text-primary-600 font-medium hover:underline">Change Password</button>
@@ -85,7 +85,7 @@ const SettingsPage = () => {
                             <div className="p-2 bg-purple-100 text-purple-600 rounded-xl">
                                 <Paintbrush className="w-5 h-5" />
                             </div>
-                            <h2 className="text-lg font-bold text-gray-800">Appearance</h2>
+                            <h2 className="section-title">Appearance</h2>
                         </div>
                         <div className="space-y-4">
                             <div className="flex items-center justify-between">

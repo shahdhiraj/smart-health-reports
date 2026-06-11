@@ -14,7 +14,7 @@ const DepartmentManagement = () => {
         <div className="w-full">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
                 <div>
-                    <h1 className="text-3xl font-bold text-gray-800">Departments</h1>
+                    <h1 className="page-title">Departments</h1>
                     <p className="text-gray-500 mt-2">Manage hospital departments and assignments.</p>
                 </div>
                 <button className="flex items-center gap-2 bg-primary-600 text-white px-4 py-2.5 rounded-xl hover:bg-primary-700 transition-colors font-medium shadow-lg shadow-primary-200">
@@ -73,7 +73,7 @@ const DepartmentManagement = () => {
                                         </div>
                                     </td>
                                     <td className="py-4 px-6">
-                                        <span className={`px-2.5 py-1 rounded-full text-xs font-bold ${dept.status === 'Active' ? 'bg-green-100 text-green-700' : 'bg-yellow-100 text-yellow-700'
+                                        <span className={`px-2.5 py-1 rounded-full text-xs font-medium ${dept.status === 'Active' ? 'bg-green-100 text-green-700' : 'bg-yellow-100 text-yellow-700'
                                             }`}>
                                             {dept.status}
                                         </span>

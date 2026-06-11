@@ -1,7 +1,9 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&family=Dancing+Script:wght@700&display=swap');
 
 @theme {
   --font-sans: 'Inter', system-ui, sans-serif;
+  --font-heading: 'Outfit', sans-serif;
 
   --color-primary-50: #f0fdfd;
   --color-primary-100: #ccfbfb;
@@ -14,10 +16,125 @@
   --color-primary-800: #006063;
   --color-primary-900: #004244;
   --color-primary-950: #002b2d;
+
+  --color-emerald-50: #ecfdf5;
+  --color-emerald-100: #d1fae5;
+  --color-emerald-500: #10b981;
+  --color-emerald-600: #059669;
+
+  --color-blue-50: #eff6ff;
+  --color-blue-100: #dbeafe;
+  --color-blue-500: #3b82f6;
+  --color-blue-600: #2563eb;
 }
 
 body {
   font-family: var(--font-sans);
   min-width: 320px;
   min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Aggressively neutralize rogue focus outlines and black borders */
+* {
+  outline: none !important;
+}
+
+:focus, :focus-visible, :active, :focus-within {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Custom shadow reset to prevent rogue black shadows */
+[class*='ring-'] {
+  --tw-ring-color: transparent !important;
+}
+
+.ring-emerald-100 {
+  --tw-ring-color: #d1fae5 !important;
+}
+
+.ring-blue-100 {
+  --tw-ring-color: #dbeafe !important;
+}
+
+/* Maintain accessibility with our custom rings */
+.focus-ring-custom:focus-visible {
+  ring: 2px;
+  ring-offset: 2px;
+  ring-color: var(--color-primary-500);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+/* Print Specific Styles */
+@media print {
+  body {
+    background: white !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block !important;
+    visibility: visible !important;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+
+  /* Reset layout for print */
+  main, header, aside, .p-8 {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    display: none !important;
+  }
+
+  /* Form Container */
+  .medical-form-container {
+    display: block !important;
+    padding: 40px !important;
+    background: white !important;
+  }
+}
+
+.print-only {
+  display: none;
+}
+
+@layer components {
+  /* Page-level headers */
+  .page-title {
+    @apply text-2xl font-semibold text-gray-600 tracking-tight;
+    font-family: var(--font-heading);
+  }
+  
+  .page-subtitle {
+    @apply text-gray-500 mt-2 font-normal text-sm md:text-base flex items-center gap-2;
+  }
+
+  /* Section-level headers */
+  .section-title {
+    @apply text-lg font-normal text-gray-700 tracking-tight;
+    font-family: var(--font-heading);
+  }
+
+  /* Card-level headers */
+  .card-title {
+    @apply text-base font-normal text-gray-700;
+    font-family: var(--font-heading);
+  }
+
+  /* Standard body text */
+  .body-text {
+    @apply text-gray-600 leading-relaxed font-medium;
+  }
 }
