@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence, useScroll, useSpring } from 'framer-motion';
-import { Stethoscope, Moon, Sun } from 'lucide-react';
+import { Stethoscope, Moon, Sun, Menu, X } from 'lucide-react';
 
 // UI
 import MagneticButton from '../components/landing/ui/MagneticButton';
@@ -28,6 +28,7 @@ const LandingPage = () => {
     const [scrolled, setScrolled] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
     const [activeSection, setActiveSection] = useState('');
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     
     const { scrollYProgress } = useScroll();
     const scaleX = useSpring(scrollYProgress, {
@@ -134,7 +135,7 @@ const LandingPage = () => {
                             ))}
                         </nav>
                         
-                        <div className="flex items-center gap-4">
+                        <div className="flex items-center gap-2 sm:gap-4">
                             <MagneticButton 
                                 onClick={() => setIsDark(!isDark)}
                                 className={`p-2.5 rounded-xl transition-colors ${isDark ? 'bg-white/5 text-yellow-300 hover:bg-white/10' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`}
@@ -159,13 +160,63 @@ const LandingPage = () => {
                             </MagneticButton>
                             <MagneticButton 
                                 onClick={() => navigate('/login')}
-                                className={`bg-gradient-to-tr from-primary-600 to-primary-400 text-white font-bold hover:from-primary-500 hover:to-primary-300 hover:scale-105 active:scale-95 transition-all shadow-lg shadow-primary-500/30 hover:shadow-primary-500/50 ${scrolled ? 'px-5 py-2.5 rounded-full text-xs' : 'px-6 py-3 rounded-full text-sm'}`}
+                                className={`bg-gradient-to-tr from-primary-600 to-primary-400 text-white font-bold hover:from-primary-500 hover:to-primary-300 hover:scale-105 active:scale-95 transition-all shadow-lg shadow-primary-500/30 hover:shadow-primary-500/50 ${scrolled ? 'px-4 sm:px-5 py-2.5 rounded-full text-xs' : 'px-5 sm:px-6 py-3 rounded-full text-xs sm:text-sm'}`}
                             >
                                 Start App
+                            </MagneticButton>
+                            <MagneticButton
+                                onClick={() => setIsMobileMenuOpen(true)}
+                                className={`lg:hidden p-2.5 rounded-xl transition-colors ${isDark ? 'bg-white/5 text-slate-300 hover:bg-white/10' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`}
+                            >
+                                <Menu className="w-5 h-5" />
                             </MagneticButton>
                         </div>
                     </div>
                 </header>
+
+                {/* Mobile Menu Overlay */}
+                <AnimatePresence>
+                    {isMobileMenuOpen && (
+                        <motion.div
+                            initial={{ opacity: 0, y: -20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -20 }}
+                            className={`absolute top-[120%] left-4 right-4 rounded-3xl p-6 shadow-2xl border ${isDark ? 'bg-[#0f172a] border-white/10 shadow-black/50' : 'bg-white border-slate-200 shadow-slate-200/50'} lg:hidden pointer-events-auto`}
+                        >
+                            <div className="flex justify-between items-center mb-8">
+                                <span className={`font-bold text-xl ${isDark ? 'text-white' : 'text-slate-900'}`}>Navigation</span>
+                                <button onClick={() => setIsMobileMenuOpen(false)} className={`p-2 rounded-full ${isDark ? 'bg-white/10 text-white hover:bg-white/20' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`}>
+                                    <X className="w-5 h-5" />
+                                </button>
+                            </div>
+                            <div className="flex flex-col gap-4">
+                                {[
+                                    { name: 'Features', id: 'features' },
+                                    { name: 'Solutions', id: 'solutions' },
+                                    { name: 'Testimonials', id: 'testimonials' },
+                                    { name: 'Pricing', id: 'pricing' }
+                                ].map((item) => (
+                                    <button 
+                                        key={item.name} 
+                                        onClick={() => {
+                                            document.getElementById(item.id)?.scrollIntoView({ behavior: 'smooth' });
+                                            setIsMobileMenuOpen(false);
+                                        }}
+                                        className={`text-left text-lg font-semibold py-3 border-b ${isDark ? 'border-white/10 text-slate-300 hover:text-white' : 'border-slate-100 text-slate-600 hover:text-primary-600'}`}
+                                    >
+                                        {item.name}
+                                    </button>
+                                ))}
+                                <button 
+                                    onClick={() => navigate('/login')}
+                                    className={`mt-4 w-full py-4 rounded-xl font-bold transition-all sm:hidden ${isDark ? 'bg-white/10 text-white' : 'bg-slate-100 text-slate-900'}`}
+                                >
+                                    Log In
+                                </button>
+                            </div>
+                        </motion.div>
+                    )}
+                </AnimatePresence>
             </div>
 
             {/* Main Content Areas */}
