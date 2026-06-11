@@ -15,7 +15,7 @@ const VoiceAssistant = ({ isDark }: { isDark: boolean }) => {
 
     // Simulate active soundwaves when listening or hovering
     useEffect(() => {
-        let interval: NodeJS.Timeout;
+        let interval: ReturnType<typeof setInterval>;
         if (isListening || hoveredIndex !== null) {
             interval = setInterval(() => {
                 setActiveBars(Array.from({ length: 8 }, () => Math.random() * 80 + 20));

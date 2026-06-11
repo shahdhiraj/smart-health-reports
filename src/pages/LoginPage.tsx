@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import type { Variants } from 'framer-motion';
 import { Stethoscope, User, Building2, Lock, Mail, ArrowRight, ShieldCheck, HeartPulse, Dna, Sun, Moon, Eye, EyeOff } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
@@ -232,7 +232,7 @@ interface DemoButtonProps {
     isDark: boolean;
 }
 
-const DemoButton = ({ role, icon, label, active, onClick, isDark }: DemoButtonProps) => {
+const DemoButton = ({ icon, label, active, onClick, isDark }: DemoButtonProps) => {
     return (
         <button
             type="button"

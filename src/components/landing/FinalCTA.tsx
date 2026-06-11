@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, CheckCircle2, Mail } from 'lucide-react';
-import MagneticButton from './ui/MagneticButton';
+
 
 const FinalCTA = ({ isDark }: { isDark: boolean }) => {
     const [email, setEmail] = useState('');
