@@ -532,8 +532,8 @@ const HealthProfile = () => {
                             <div key={i} className="flex justify-between p-4 bg-gray-50/50 rounded-2xl border border-gray-100 group">
                                 <div className="flex items-center gap-3">
                                     <div className="w-9 h-9 bg-white text-primary-600 border border-primary-100 rounded-xl flex items-center justify-center font-medium text-[10px]">Rx</div>
-                                    <div className="flex-1">
-                                        <div className="flex items-center justify-between">
+                                    <div className="flex-1 min-w-0">
+                                        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-0">
                                             <div>
                                                 <p className="font-medium text-gray-800 text-sm leading-none">{med.name}</p>
                                                 {med.purpose && (
@@ -542,7 +542,7 @@ const HealthProfile = () => {
                                             </div>
                                             <p className="text-[10px] font-medium text-gray-400 tracking-widest">{med.dosage} • {med.frequency}</p>
                                         </div>
-                                        <div className="flex items-center gap-3 mt-1.5 pt-1.5 border-t border-gray-100/50">
+                                        <div className="flex flex-wrap items-center gap-2 mt-2 pt-2 border-t border-gray-100/50">
                                             <p className="text-[9px] text-gray-400 font-medium tracking-tight bg-gray-100/50 px-2 py-0.5 rounded">Mfd. By: <span className="text-gray-600 font-medium">{med.manufacturer || 'Unknown'}</span></p>
                                             <p className="text-[9px] text-gray-400 font-medium tracking-tight bg-gray-100/50 px-2 py-0.5 rounded">Exp. Date: <span className="text-gray-600 font-medium">{med.expiryDate || 'N/A'}</span></p>
                                         </div>
@@ -593,9 +593,10 @@ const HealthProfile = () => {
                     <div className="bg-gray-50 p-4 rounded-2xl border border-gray-100">
                         <div className="flex flex-col gap-3">
                             {/* Line 1: Clinical Basics */}
-                            <div className="flex flex-wrap md:flex-nowrap gap-2 items-center">
-                                <input placeholder="Drug Name" className="flex-[3] px-3 py-2.5 rounded-xl text-sm border border-gray-50 bg-white outline-none" value={newMed.name} onChange={e => setNewMed({...newMed, name: e.target.value})} />
-                                <select className="flex-1 px-3 py-2.5 rounded-xl text-sm border border-gray-50 bg-white" value={newMed.dosage} onChange={e => setNewMed({...newMed, dosage: e.target.value})}>
+                            <div className="flex flex-col sm:flex-row gap-2 items-stretch sm:items-center">
+                                <input placeholder="Drug Name" className="w-full sm:flex-[3] px-3 py-2.5 rounded-xl text-sm border border-gray-50 bg-white outline-none" value={newMed.name} onChange={e => setNewMed({...newMed, name: e.target.value})} />
+                                <div className="flex gap-2 w-full sm:w-auto sm:flex-[2]">
+                                    <select className="flex-1 px-3 py-2.5 rounded-xl text-sm border border-gray-50 bg-white" value={newMed.dosage} onChange={e => setNewMed({...newMed, dosage: e.target.value})}>
                                     <option value="" disabled hidden>Dosage</option>
                                     <option value="5mg">5mg</option>
                                     <option value="10mg">10mg</option>
@@ -624,11 +625,12 @@ const HealthProfile = () => {
                                     <option value="Every 6 Hours">Every 6 Hours</option>
                                     <option value="Every 8 Hours">Every 8 Hours</option>
                                     <option value="Every 12 Hours">Every 12 Hours</option>
-                                    <option value="As Needed">As Needed</option>
-                                </select>
+                                        <option value="As Needed">As Needed</option>
+                                    </select>
+                                </div>
                                 <button 
                                     onClick={() => setIsScanningMed(true)}
-                                    className="px-4 py-2.5 bg-white border border-gray-100 text-primary-600 rounded-xl hover:bg-primary-50 transition-all flex items-center gap-2 group shadow-sm shrink-0"
+                                    className="w-full sm:w-auto px-4 py-2.5 bg-white border border-gray-100 text-primary-600 rounded-xl hover:bg-primary-50 transition-all flex items-center justify-center gap-2 group shadow-sm shrink-0"
                                 >
                                     <Camera className="w-4 h-4" />
                                     <span className="text-[10px] font-medium uppercase tracking-wider">Scan</span>
@@ -636,10 +638,12 @@ const HealthProfile = () => {
                             </div>
                             
                             {/* Line 2: Clinical Details */}
-                            <div className="flex flex-wrap md:flex-nowrap gap-2 items-center">
-                                <input placeholder="Mfd. By" className="flex-1 px-3 py-2.5 rounded-xl text-sm border border-gray-50 bg-white" value={newMed.manufacturer} onChange={e => setNewMed({...newMed, manufacturer: e.target.value})} />
-                                <input placeholder="Exp. Date" className="flex-1 px-3 py-2.5 rounded-xl text-sm border border-gray-50 bg-white" value={newMed.expiryDate} onChange={e => setNewMed({...newMed, expiryDate: e.target.value})} />
-                                <input placeholder="Purpose (e.g. Fever)" className="flex-[2] px-3 py-2.5 rounded-xl text-sm border border-gray-50 bg-white" value={newMed.purpose} onChange={e => setNewMed({...newMed, purpose: e.target.value})} />
+                            <div className="flex flex-col sm:flex-row gap-2 items-stretch sm:items-center">
+                                <div className="flex gap-2 w-full sm:w-auto sm:flex-[2]">
+                                    <input placeholder="Mfd. By" className="flex-1 px-3 py-2.5 rounded-xl text-sm border border-gray-50 bg-white" value={newMed.manufacturer} onChange={e => setNewMed({...newMed, manufacturer: e.target.value})} />
+                                    <input placeholder="Exp. Date" className="flex-1 px-3 py-2.5 rounded-xl text-sm border border-gray-50 bg-white" value={newMed.expiryDate} onChange={e => setNewMed({...newMed, expiryDate: e.target.value})} />
+                                </div>
+                                <input placeholder="Purpose (e.g. Fever)" className="w-full sm:flex-[2] px-3 py-2.5 rounded-xl text-sm border border-gray-50 bg-white" value={newMed.purpose} onChange={e => setNewMed({...newMed, purpose: e.target.value})} />
                                 <div className="flex gap-2 shrink-0">
                                     {editingMedIndex !== null && (
                                         <button 

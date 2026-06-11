@@ -20,6 +20,7 @@ const MainLayout = () => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(true);
     const [isProfileOpen, setIsProfileOpen] = useState(false);
     const [isNotificationsOpen, setIsNotificationsOpen] = useState(false);
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     // Print Listener
     useEffect(() => {
@@ -145,11 +146,85 @@ const MainLayout = () => {
                 </div>
             </motion.aside>
 
-        {/* Main Content */}
-            <main className={`flex-1 transition-all duration-300 ${isSidebarOpen ? 'md:ml-[280px]' : 'md:ml-[80px]'}`}>
-                {/* Top Header */}
-                <header className="bg-white/80 backdrop-blur-md sticky top-0 z-20 border-b border-gray-200 px-6 md:px-16 lg:px-24 py-4 flex items-center justify-between md:justify-end">
+            {/* Mobile Sidebar Overlay */}
+            <AnimatePresence>
+                {isMobileMenuOpen && (
+                    <>
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            onClick={() => setIsMobileMenuOpen(false)}
+                            className="fixed inset-0 bg-slate-900/50 z-40 md:hidden backdrop-blur-sm"
+                        />
+                        <motion.aside
+                            initial={{ x: '-100%' }}
+                            animate={{ x: 0 }}
+                            exit={{ x: '-100%' }}
+                            transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+                            className="fixed inset-y-0 left-0 w-72 bg-white z-50 flex flex-col md:hidden shadow-2xl"
+                        >
+                            <div className="p-6 flex items-center justify-between border-b border-gray-100">
+                                <div className="flex items-center gap-3">
+                                    <div className="h-10 w-10 bg-primary-600 rounded-xl flex items-center justify-center shrink-0">
+                                        <Stethoscope className="text-white w-6 h-6" />
+                                    </div>
+                                    <span className="font-medium text-xl text-gray-800">SmartHealth</span>
+                                </div>
+                                <button onClick={() => setIsMobileMenuOpen(false)} className="p-2 text-gray-400 hover:bg-gray-100 rounded-lg">
+                                    <X className="w-5 h-5" />
+                                </button>
+                            </div>
+                            
+                            <nav className="flex-1 overflow-y-auto px-4 py-6 space-y-2">
+                                {roleMenuItems.map((item) => {
+                                    const isActive = location.pathname === item.path;
+                                    return (
+                                        <button
+                                            key={item.path}
+                                            onClick={() => {
+                                                navigate(item.path);
+                                                setIsMobileMenuOpen(false);
+                                            }}
+                                            className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-colors ${isActive
+                                                ? 'bg-primary-50 text-primary-600'
+                                                : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
+                                                }`}
+                                        >
+                                            <item.icon className="w-5 h-5 shrink-0" />
+                                            <span className="font-medium">{item.label}</span>
+                                        </button>
+                                    );
+                                })}
+                            </nav>
 
+                            <div className="p-4 border-t border-gray-100">
+                                <button
+                                    onClick={handleLogout}
+                                    className="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-red-600 hover:bg-red-50 transition-colors"
+                                >
+                                    <LogOut className="w-5 h-5 shrink-0" />
+                                    <span className="font-medium">Sign Out</span>
+                                </button>
+                            </div>
+                        </motion.aside>
+                    </>
+                )}
+            </AnimatePresence>
+
+        {/* Main Content */}
+            <main className={`flex-1 transition-all duration-300 ${isSidebarOpen ? 'md:ml-[280px]' : 'md:ml-[80px]'} ml-0`}>
+                {/* Top Header */}
+                <header className="bg-white/80 backdrop-blur-md sticky top-0 z-20 border-b border-gray-200 px-4 md:px-16 lg:px-24 py-4 flex items-center justify-between">
+                    
+                    <div className="flex items-center md:hidden">
+                        <button 
+                            className="p-2 rounded-xl text-gray-500 hover:bg-gray-100 transition-colors"
+                            onClick={() => setIsMobileMenuOpen(true)}
+                        >
+                            <Menu className="w-6 h-6" />
+                        </button>
+                    </div>
                     <div className="flex items-center gap-4">
                         <button 
                             onClick={() => {
@@ -162,14 +237,18 @@ const MainLayout = () => {
                             <RotateCcw className="w-5 h-5 group-active:rotate-180 transition-transform duration-500" />
                         </button>
 
-                        <div className="relative">
+                        <div className="relative hidden sm:block">
                             <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
                             <input
                                 type="text"
                                 placeholder="Search clinical records..."
-                                className="pl-10 pr-4 py-2 bg-gray-50 border border-transparent focus:bg-white focus:border-primary-200 rounded-xl text-sm outline-none w-64 transition-all"
+                                className="pl-10 pr-4 py-2 bg-gray-50 border border-transparent focus:bg-white focus:border-primary-200 rounded-xl text-sm outline-none w-48 md:w-64 transition-all"
                             />
                         </div>
+
+                        <button className="sm:hidden p-2 text-gray-400 hover:text-primary-600 hover:bg-primary-50 rounded-xl transition-all">
+                            <Search className="w-5 h-5" />
+                        </button>
 
                         {/* Notification Bell */}
                         <div className="relative">
@@ -335,7 +414,7 @@ const MainLayout = () => {
                     </div>
                 </header>
 
-                <div className="px-6 py-6 md:px-16 md:py-8 lg:px-24 lg:py-10 w-full overflow-x-hidden">
+                <div className="px-4 py-6 md:px-16 md:py-8 lg:px-24 lg:py-10 w-full overflow-x-hidden">
                     <Outlet />
                 </div>
             </main>

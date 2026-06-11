@@ -16,12 +16,12 @@ const FinalCTA = ({ isDark }: { isDark: boolean }) => {
     };
 
     return (
-        <section className="py-40 relative overflow-hidden">
+        <section className="py-20 md:py-40 relative overflow-hidden">
             {/* Massive bouncy background sphere */}
             <motion.div 
                 animate={{ scale: [1, 1.05, 1], rotate: 360 }}
                 transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
-                className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-[40%] blur-[100px] pointer-events-none transition-colors duration-1000 ${isDark ? 'bg-primary-900/30' : 'bg-emerald-200/50'}`} 
+                className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150vw] h-[150vw] md:w-[800px] md:h-[800px] rounded-[40%] blur-[100px] pointer-events-none transition-colors duration-1000 ${isDark ? 'bg-primary-900/30' : 'bg-emerald-200/50'}`} 
             />
             
             <div className="container mx-auto px-6 relative z-10 text-center">
@@ -32,7 +32,7 @@ const FinalCTA = ({ isDark }: { isDark: boolean }) => {
                     transition={{ type: "spring", stiffness: 100, damping: 20 }}
                     className="max-w-5xl mx-auto"
                 >
-                    <h2 className={`text-7xl md:text-8xl font-bold mb-6 ${isDark ? 'text-white' : 'text-slate-900'}`}>
+                    <h2 className={`text-5xl md:text-7xl lg:text-8xl font-bold mb-6 ${isDark ? 'text-white' : 'text-slate-900'}`}>
                         Let's Build the <br className="hidden md:block" />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-primary-500">Future.</span>
                     </h2>

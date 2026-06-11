@@ -27,12 +27,12 @@ const VoiceAssistant = ({ isDark }: { isDark: boolean }) => {
     }, [isListening, hoveredIndex]);
 
     return (
-        <section className={`py-32 relative overflow-hidden transition-colors duration-700 ${isDark ? 'bg-[#020817]/50' : 'bg-primary-50/50'}`}>
-            <div className="container mx-auto px-6 flex flex-col md:flex-row items-center gap-16 relative z-10">
+        <section className={`py-20 md:py-32 relative overflow-hidden transition-colors duration-700 ${isDark ? 'bg-[#020817]/50' : 'bg-primary-50/50'}`}>
+            <div className="container mx-auto px-6 flex flex-col md:flex-row items-center gap-10 md:gap-16 relative z-10">
                 
                 {/* Interactive Microphone Visualization */}
                 <div className="md:w-1/2 flex justify-center">
-                    <div className="relative w-80 h-80 flex items-center justify-center cursor-pointer"
+                    <div className="relative w-64 h-64 md:w-80 md:h-80 flex items-center justify-center cursor-pointer"
                          onClick={() => setIsListening(!isListening)}
                          onMouseEnter={() => !isListening && setIsListening(true)}
                          onMouseLeave={() => setIsListening(false)}
@@ -50,7 +50,7 @@ const VoiceAssistant = ({ isDark }: { isDark: boolean }) => {
                         {/* Central Button */}
                         <motion.div 
                             animate={{ scale: isListening ? 1.05 : 1 }}
-                            className={`relative z-10 w-40 h-40 rounded-full flex items-center justify-center transition-colors duration-500 shadow-2xl
+                            className={`relative z-10 w-32 h-32 md:w-40 md:h-40 rounded-full flex items-center justify-center transition-colors duration-500 shadow-2xl
                                 ${isListening 
                                     ? 'bg-gradient-to-tr from-cyan-500 to-emerald-400 shadow-[0_0_80px_rgba(6,182,212,0.6)]' 
                                     : 'bg-gradient-to-tr from-primary-600 to-emerald-400 shadow-[0_0_80px_rgba(52,211,153,0.3)]'
@@ -107,7 +107,7 @@ const VoiceAssistant = ({ isDark }: { isDark: boolean }) => {
                         initial={{ opacity: 0, x: 30 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        className={`text-[54px] leading-tight font-extrabold mb-6 ${isDark ? 'text-white' : 'text-slate-900'}`}
+                        className={`text-4xl md:text-[54px] leading-tight font-extrabold mb-6 ${isDark ? 'text-white' : 'text-slate-900'}`}
                     >
                         Meet Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">Multilingual Voice Assistant</span>
                     </motion.h2>

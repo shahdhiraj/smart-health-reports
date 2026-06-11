@@ -72,7 +72,7 @@ const LoginPage = () => {
                 variants={containerVariants}
             >
                 {/* Left Side - Branding */}
-                <div className={`md:w-[45%] p-10 md:p-14 flex flex-col justify-between relative overflow-hidden border-b md:border-b-0 md:border-r ${isDark ? 'border-white/10' : 'border-slate-200'}`}>
+                <div className={`md:w-[45%] p-6 md:p-10 lg:p-14 flex flex-col justify-between relative overflow-hidden border-b md:border-b-0 md:border-r ${isDark ? 'border-white/10' : 'border-slate-200'}`}>
                     <div className={`absolute inset-0 z-0 ${isDark ? 'bg-gradient-to-br from-primary-900/40 to-slate-900/80' : 'bg-gradient-to-br from-primary-50/80 to-emerald-50/80'}`} />
                     
                     {/* Floating icons background */}
@@ -89,7 +89,7 @@ const LoginPage = () => {
                             <span className={`text-xl font-bold tracking-wide ${isDark ? 'text-white' : 'text-slate-900'}`}>SmartHealth</span>
                         </div>
                         
-                        <h1 className={`text-4xl md:text-5xl font-bold mb-6 leading-tight ${isDark ? 'text-white' : 'text-slate-900'}`}>
+                        <h1 className={`text-3xl sm:text-4xl md:text-5xl font-bold mb-6 leading-tight ${isDark ? 'text-white' : 'text-slate-900'}`}>
                             Your health,<br/>
                             <span className="text-primary-500">
                                 beautifully synced.
@@ -110,7 +110,7 @@ const LoginPage = () => {
                 </div>
 
                 {/* Right Side - Login Form */}
-                <div className={`md:w-[55%] p-10 md:p-14 flex flex-col justify-center relative ${isDark ? 'bg-slate-900/80' : 'bg-white/50'}`}>
+                <div className={`md:w-[55%] p-6 md:p-10 lg:p-14 flex flex-col justify-center relative ${isDark ? 'bg-slate-900/80' : 'bg-white/50'}`}>
                     <motion.div variants={itemVariants} className="mb-8">
                         <h2 className={`text-2xl md:text-3xl font-bold mb-2 ${isDark ? 'text-white' : 'text-slate-900'}`}>Welcome Back</h2>
                         <p className={isDark ? 'text-slate-400' : 'text-slate-600'}>Please enter your details to sign in.</p>
@@ -119,7 +119,7 @@ const LoginPage = () => {
                     {/* Auto-fill Demo Buttons */}
                     <motion.div variants={itemVariants} className="mb-8">
                         <p className={`text-xs font-semibold uppercase tracking-wider mb-3 ${isDark ? 'text-slate-500' : 'text-slate-400'}`}>One-Click Demo Login</p>
-                        <div className="grid grid-cols-3 gap-3">
+                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                             <DemoButton 
                                 role="patient" 
                                 icon={<User className="w-4 h-4 text-emerald-500" />} 
