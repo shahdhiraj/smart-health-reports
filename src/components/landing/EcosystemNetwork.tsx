@@ -31,7 +31,7 @@ const EcosystemNetwork = ({ isDark }: { isDark: boolean }) => {
                     }
                 />
 
-                <div className="relative h-[600px] w-full max-w-5xl mx-auto rounded-[3rem] overflow-hidden mt-20">
+                <div className="relative h-[400px] md:h-[600px] w-full max-w-5xl mx-auto rounded-[3rem] overflow-hidden mt-10 md:mt-20">
                     {/* SVG Connections with Scroll Scrubbing */}
                     <svg className="absolute inset-0 w-full h-full opacity-40 overflow-visible">
                         <motion.path 
@@ -62,10 +62,10 @@ const EcosystemNetwork = ({ isDark }: { isDark: boolean }) => {
                             className="absolute flex flex-col items-center justify-center group cursor-pointer"
                             style={{ left: node.x, top: node.y, transform: 'translate(-50%, -50%)' }}
                         >
-                            <div className={`w-20 h-20 rounded-full ${node.color} flex items-center justify-center mb-4 shadow-xl`}>
-                                <node.icon className="w-8 h-8 text-white" />
+                            <div className={`w-14 h-14 md:w-20 md:h-20 rounded-full ${node.color} flex items-center justify-center mb-2 md:mb-4 shadow-xl`}>
+                                <node.icon className="w-6 h-6 md:w-8 md:h-8 text-white" />
                             </div>
-                            <span className={`font-bold tracking-tight text-lg ${isDark ? 'text-white' : 'text-slate-800'}`}>{node.label}</span>
+                            <span className={`font-bold tracking-tight text-xs md:text-lg ${isDark ? 'text-white' : 'text-slate-800'}`}>{node.label}</span>
                         </motion.div>
                     ))}
 
@@ -75,10 +75,10 @@ const EcosystemNetwork = ({ isDark }: { isDark: boolean }) => {
                             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
                             className="relative"
                         >
-                            <div className="w-32 h-32 rounded-full bg-gradient-to-tr from-primary-500 to-emerald-400 flex items-center justify-center shadow-2xl z-10 relative">
-                                <Activity className="w-12 h-12 text-white" />
+                            <div className="w-20 h-20 md:w-32 md:h-32 rounded-full bg-gradient-to-tr from-primary-500 to-emerald-400 flex items-center justify-center shadow-2xl z-10 relative">
+                                <Activity className="w-8 h-8 md:w-12 md:h-12 text-white" />
                             </div>
-                            <div className="absolute -inset-8 bg-primary-400/20 rounded-full blur-xl" />
+                            <div className="absolute -inset-4 md:-inset-8 bg-primary-400/20 rounded-full blur-xl" />
                         </motion.div>
                     </div>
                 </div>

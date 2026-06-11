@@ -45,7 +45,7 @@ const HealthTimelineShowcase = ({ isDark }: { isDark: boolean }) => {
                 {/* 3D Rotated Plane */}
                 <motion.div 
                     style={{ x: xTransform }}
-                    className="absolute left-0 right-0 flex items-center justify-start w-[150vw] h-full origin-center"
+                    className="absolute left-0 right-0 flex items-center justify-start w-[350vw] md:w-[200vw] lg:w-[150vw] h-full origin-center"
                     initial={{ rotateX: 20, rotateY: -5, scale: 1 }}
                     whileInView={{ rotateX: 20, rotateY: -5, scale: 1 }}
                 >

@@ -109,7 +109,7 @@ const SmartAIEngine = ({ isDark }: { isDark: boolean }) => {
                             <Brain className={`w-16 h-16 ${isDark ? 'text-primary-400' : 'text-primary-500'}`} />
                         </motion.div>
                         
-                        <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full blur-[100px] opacity-40 mix-blend-multiply ${isDark ? 'bg-primary-600 mix-blend-screen' : 'bg-emerald-300'}`} />
+                        <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120vw] h-[120vw] md:w-[500px] md:h-[500px] rounded-full blur-[100px] opacity-40 mix-blend-multiply ${isDark ? 'bg-primary-600 mix-blend-screen' : 'bg-emerald-300'}`} />
                     </div>
                 </div>
             </div>

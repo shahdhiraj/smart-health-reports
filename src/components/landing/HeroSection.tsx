@@ -51,7 +51,7 @@ const HeroSection = ({ isDark, isReady }: { isDark: boolean; isReady: boolean })
                         variants={titleVariants}
                         initial="hidden"
                         animate={isReady ? "visible" : "hidden"}
-                        className={`text-6xl md:text-8xl font-extrabold tracking-tight mb-6 ${isDark ? 'text-white' : 'text-slate-900'}`}
+                        className={`text-5xl md:text-6xl lg:text-8xl font-extrabold tracking-tight mb-6 ${isDark ? 'text-white' : 'text-slate-900'}`}
                     >
                         <span className="inline-block mr-4">
                             {text1.map((char, index) => (
@@ -99,12 +99,12 @@ const HeroSection = ({ isDark, isReady }: { isDark: boolean; isReady: boolean })
                     <motion.div 
                         animate={{ rotate: 360, scale: [1, 1.1, 1] }}
                         transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                        className={`absolute top-0 left-20 w-[400px] h-[400px] rounded-[3rem] blur-xl opacity-40 mix-blend-multiply ${isDark ? 'bg-primary-500/20 mix-blend-screen' : 'bg-primary-200'}`} 
+                        className={`absolute top-0 -left-10 md:left-20 w-[80vw] h-[80vw] md:w-[400px] md:h-[400px] rounded-[3rem] blur-xl opacity-40 mix-blend-multiply ${isDark ? 'bg-primary-500/20 mix-blend-screen' : 'bg-primary-200'}`} 
                     />
                     <motion.div 
                         animate={{ rotate: -360, scale: [1, 1.2, 1] }}
                         transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-                        className={`absolute bottom-0 right-20 w-[500px] h-[500px] rounded-full blur-xl opacity-40 mix-blend-multiply ${isDark ? 'bg-emerald-500/20 mix-blend-screen' : 'bg-emerald-200'}`} 
+                        className={`absolute bottom-0 -right-10 md:right-20 w-[100vw] h-[100vw] md:w-[500px] md:h-[500px] rounded-full blur-xl opacity-40 mix-blend-multiply ${isDark ? 'bg-emerald-500/20 mix-blend-screen' : 'bg-emerald-200'}`} 
                     />
                 </motion.div>
 
