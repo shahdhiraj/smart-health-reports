@@ -51,7 +51,7 @@ const HeroSection = ({ isDark, isReady }: { isDark: boolean; isReady: boolean })
                         variants={titleVariants}
                         initial="hidden"
                         animate={isReady ? "visible" : "hidden"}
-                        className={`text-5xl md:text-6xl lg:text-8xl font-extrabold tracking-tight mb-6 ${isDark ? 'text-white' : 'text-slate-900'}`}
+                        className={`text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold tracking-tight mb-4 md:mb-6 break-words ${isDark ? 'text-white' : 'text-slate-900'}`}
                     >
                         <span className="inline-block mr-4">
                             {text1.map((char, index) => (

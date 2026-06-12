@@ -29,7 +29,7 @@ const AnimatedSectionHeader = ({ title, subtitle, isDark, align = 'center' }: Pr
                 whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
-                className={`text-[54px] leading-tight font-bold mb-6 ${isDark ? 'text-white' : 'text-slate-900'}`}
+                className={`text-3xl sm:text-4xl md:text-[54px] leading-tight font-bold mb-4 md:mb-6 break-words hyphens-auto ${isDark ? 'text-white' : 'text-slate-900'}`}
             >
                 {title}
             </motion.h2>

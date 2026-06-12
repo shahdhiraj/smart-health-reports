@@ -11,10 +11,10 @@ const HowItWorksTimeline = ({ isDark }: { isDark: boolean }) => {
     ];
 
     return (
-        <section className={`py-40 relative ${isDark ? 'bg-[#0f172a]' : 'bg-[#f8fafc]'}`}>
+        <section className={`py-16 md:py-40 relative ${isDark ? 'bg-[#0f172a]' : 'bg-[#f8fafc]'}`}>
             <div className="container mx-auto px-6">
                 <div className="text-center mb-20">
-                    <h2 className={`text-[54px] leading-tight font-bold mb-6 ${isDark ? 'text-white' : 'text-slate-900'}`}>
+                    <h2 className={`text-3xl sm:text-4xl md:text-[54px] leading-tight font-bold mb-4 md:mb-6 break-words ${isDark ? 'text-white' : 'text-slate-900'}`}>
                         The Intelligent <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">Journey</span>
                     </h2>
                 </div>

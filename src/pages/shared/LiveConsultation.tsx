@@ -125,7 +125,7 @@ const LiveConsultation = () => {
                         {/* Sidebar: Chat & Participants */}
                         <div className="w-full md:w-96 flex flex-col gap-4">
                             {/* Participant Card */}
-                            <Card className="bg-gray-900 border-white/5 p-4 flex items-center justify-between text-white shadow-2xl">
+                            <Card className="bg-gray-900 border-white/5 p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-white shadow-2xl">
                                 <div className="flex items-center gap-3">
                                     <div className="w-10 h-10 bg-primary-500 rounded-full flex items-center justify-center shadow-lg shadow-primary-500/20">
                                         <Users className="w-5 h-5" />
@@ -143,7 +143,7 @@ const LiveConsultation = () => {
 
                             {/* Chat Window */}
                             <Card className="flex-1 bg-gray-900 border-white/5 flex flex-col overflow-hidden shadow-2xl">
-                                <div className="p-4 border-b border-white/5 flex items-center justify-between">
+                                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-4 border-b border-white/5">
                                     <div className="flex items-center gap-2">
                                         <MessageSquare className="w-4 h-4 text-primary-500" />
                                         <h4 className="font-medium text-sm">Consultation Logs</h4>

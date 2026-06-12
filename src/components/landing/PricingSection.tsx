@@ -28,7 +28,7 @@ const PricingSection = ({ isDark }: { isDark: boolean }) => {
     ];
 
     return (
-        <section className={`py-40 relative ${isDark ? 'bg-[#0f172a]' : 'bg-[#f8fafc]'}`}>
+        <section className={`py-16 md:py-40 relative ${isDark ? 'bg-[#0f172a]' : 'bg-[#f8fafc]'}`}>
             <div className="container mx-auto px-6">
                 <div className="text-center mb-20">
                     <AnimatedSectionHeader 

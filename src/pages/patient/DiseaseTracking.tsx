@@ -96,7 +96,7 @@ const DiseaseTracking = () => {
                     </h2>
 
                     <div className="space-y-4">
-                        <div className="flex items-center justify-between p-4 bg-gray-50 rounded-xl border border-gray-100">
+                        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 p-4 bg-gray-50 rounded-xl border border-gray-100">
                             <div className="flex items-center gap-4">
                                 <div className="w-10 h-10 rounded-full bg-primary-100 flex items-center justify-center text-primary-600 font-medium">M</div>
                                 <div>
@@ -104,9 +104,9 @@ const DiseaseTracking = () => {
                                     <p className="text-sm text-gray-500">500mg • After Breakfast</p>
                                 </div>
                             </div>
-                            <div className="flex gap-2">
+                            <div className="flex gap-1 sm:gap-2 w-full md:w-auto overflow-x-auto pb-1 scrollbar-none">
                                 {[1, 1, 1, 1, 1, 0, 0].map((taken, i) => (
-                                    <div key={i} className={`w-8 h-8 rounded-lg flex items-center justify-center text-xs font-medium ${taken ? 'bg-emerald-100 text-emerald-600' : 'bg-gray-200 text-gray-400'
+                                    <div key={i} className={`shrink-0 w-8 h-8 rounded-lg flex items-center justify-center text-xs font-medium ${taken ? 'bg-emerald-100 text-emerald-600' : 'bg-gray-200 text-gray-400'
                                         }`}>
                                         {['M', 'T', 'W', 'T', 'F', 'S', 'S'][i]}
                                     </div>
@@ -114,7 +114,7 @@ const DiseaseTracking = () => {
                             </div>
                         </div>
 
-                        <div className="flex items-center justify-between p-4 bg-gray-50 rounded-xl border border-gray-100">
+                        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 p-4 bg-gray-50 rounded-xl border border-gray-100">
                             <div className="flex items-center gap-4">
                                 <div className="w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center text-orange-600 font-medium">I</div>
                                 <div>
@@ -122,9 +122,9 @@ const DiseaseTracking = () => {
                                     <p className="text-sm text-gray-500">20 Units • Before Bed</p>
                                 </div>
                             </div>
-                            <div className="flex gap-2">
+                            <div className="flex gap-1 sm:gap-2 w-full md:w-auto overflow-x-auto pb-1 scrollbar-none">
                                 {[1, 1, 1, 1, 0, 0, 0].map((taken, i) => (
-                                    <div key={i} className={`w-8 h-8 rounded-lg flex items-center justify-center text-xs font-medium ${taken ? 'bg-emerald-100 text-emerald-600' : 'bg-gray-200 text-gray-400'
+                                    <div key={i} className={`shrink-0 w-8 h-8 rounded-lg flex items-center justify-center text-xs font-medium ${taken ? 'bg-emerald-100 text-emerald-600' : 'bg-gray-200 text-gray-400'
                                         }`}>
                                         {['M', 'T', 'W', 'T', 'F', 'S', 'S'][i]}
                                     </div>

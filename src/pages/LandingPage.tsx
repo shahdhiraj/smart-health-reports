@@ -108,14 +108,14 @@ const LandingPage = () => {
             </div>
 
             {/* Sticky Floating Nav Bar */}
-            <div className="fixed top-0 left-0 right-0 z-50 flex justify-center px-4 md:px-6 pointer-events-none transition-all duration-500 mt-6">
+            <div className="fixed top-0 left-0 right-0 z-50 flex justify-center px-4 md:px-6 pointer-events-none transition-all duration-500 mt-2 md:mt-6">
                 <header className={`pointer-events-auto transition-all duration-500 ${scrolled ? `w-full max-w-6xl rounded-full ${isDark ? 'bg-[#0f172a]/80 backdrop-blur-2xl border border-white/10 shadow-2xl shadow-black/50' : 'bg-white/80 backdrop-blur-2xl border border-slate-200/50 shadow-2xl shadow-slate-200/50'}` : 'w-full bg-transparent'}`}>
-                    <div className={`px-6 flex justify-between items-center transition-all duration-500 ${scrolled ? 'h-16' : 'h-20'}`}>
-                        <div className="flex items-center gap-3">
-                            <MagneticButton className={`transition-all duration-500 bg-gradient-to-tr from-primary-600 to-primary-400 flex items-center justify-center shadow-lg shadow-primary-500/20 ${scrolled ? 'w-10 h-10 rounded-xl' : 'w-12 h-12 rounded-2xl'}`}>
-                                <Stethoscope className={`text-white transition-all duration-500 ${scrolled ? 'w-5 h-5' : 'w-6 h-6'}`} />
+                    <div className={`px-3 sm:px-6 flex justify-between items-center transition-all duration-500 ${scrolled ? 'h-14 sm:h-16' : 'h-16 sm:h-20'}`}>
+                        <div className="flex items-center gap-2 sm:gap-3">
+                            <MagneticButton className={`transition-all duration-500 bg-gradient-to-tr from-primary-600 to-primary-400 flex items-center justify-center shadow-lg shadow-primary-500/20 ${scrolled ? 'w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl' : 'w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl'}`}>
+                                <Stethoscope className={`text-white transition-all duration-500 ${scrolled ? 'w-4 h-4 sm:w-5 sm:h-5' : 'w-5 h-5 sm:w-6 sm:h-6'}`} />
                             </MagneticButton>
-                            <span className={`font-medium tracking-tight transition-all duration-500 ${scrolled ? 'text-xl' : 'text-2xl'} ${isDark ? 'text-white' : 'text-slate-900'}`}>SmartHealth</span>
+                            <span className={`font-medium tracking-tight transition-all duration-500 ${scrolled ? 'text-lg sm:text-xl' : 'text-xl sm:text-2xl'} ${isDark ? 'text-white' : 'text-slate-900'}`}>SmartHealth</span>
                         </div>
                         
                         <nav className="hidden lg:flex items-center gap-8">
@@ -135,19 +135,19 @@ const LandingPage = () => {
                             ))}
                         </nav>
                         
-                        <div className="flex items-center gap-2 sm:gap-4">
+                        <div className="flex items-center gap-1.5 sm:gap-4">
                             <MagneticButton 
                                 onClick={() => setIsDark(!isDark)}
-                                className={`p-2.5 rounded-xl transition-colors ${isDark ? 'bg-white/5 text-yellow-300 hover:bg-white/10' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`}
+                                className={`p-1.5 sm:p-2.5 rounded-lg sm:rounded-xl transition-colors ${isDark ? 'bg-white/5 text-yellow-300 hover:bg-white/10' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`}
                             >
                                 <AnimatePresence mode="wait">
                                     {isDark ? (
                                         <motion.div key="sun" initial={{ rotate: -90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: 90, opacity: 0 }}>
-                                            <Sun className="w-5 h-5" />
+                                            <Sun className="w-4 h-4 sm:w-5 sm:h-5" />
                                         </motion.div>
                                     ) : (
                                         <motion.div key="moon" initial={{ rotate: 90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: -90, opacity: 0 }}>
-                                            <Moon className="w-5 h-5" />
+                                            <Moon className="w-4 h-4 sm:w-5 sm:h-5" />
                                         </motion.div>
                                     )}
                                 </AnimatePresence>
@@ -160,15 +160,15 @@ const LandingPage = () => {
                             </MagneticButton>
                             <MagneticButton 
                                 onClick={() => navigate('/login')}
-                                className={`bg-gradient-to-tr from-primary-600 to-primary-400 text-white font-bold hover:from-primary-500 hover:to-primary-300 hover:scale-105 active:scale-95 transition-all shadow-lg shadow-primary-500/30 hover:shadow-primary-500/50 ${scrolled ? 'px-4 sm:px-5 py-2.5 rounded-full text-xs' : 'px-5 sm:px-6 py-3 rounded-full text-xs sm:text-sm'}`}
+                                className={`bg-gradient-to-tr from-primary-600 to-primary-400 text-white font-bold hover:from-primary-500 hover:to-primary-300 hover:scale-105 active:scale-95 transition-all shadow-lg shadow-primary-500/30 hover:shadow-primary-500/50 ${scrolled ? 'px-3 sm:px-5 py-1.5 sm:py-2.5 rounded-full text-[10px] sm:text-xs' : 'px-3 sm:px-6 py-2 sm:py-3 rounded-full text-[11px] sm:text-sm'}`}
                             >
                                 Start App
                             </MagneticButton>
                             <MagneticButton
                                 onClick={() => setIsMobileMenuOpen(true)}
-                                className={`lg:hidden p-2.5 rounded-xl transition-colors ${isDark ? 'bg-white/5 text-slate-300 hover:bg-white/10' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`}
+                                className={`lg:hidden p-1.5 sm:p-2.5 rounded-lg sm:rounded-xl transition-colors ${isDark ? 'bg-white/5 text-slate-300 hover:bg-white/10' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`}
                             >
-                                <Menu className="w-5 h-5" />
+                                <Menu className="w-4 h-4 sm:w-5 sm:h-5" />
                             </MagneticButton>
                         </div>
                     </div>

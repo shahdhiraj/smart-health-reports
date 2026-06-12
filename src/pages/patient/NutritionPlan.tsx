@@ -657,34 +657,19 @@ const NutritionPlan = () => {
                         Neural-optimized dietary regimens for {healthData.fullName}.
                     </p>
                 </div>
-                <div className="flex items-center gap-4">
-                    <button 
-                         onClick={() => setShowGroceryModal(true)}
-                         className="flex items-center gap-2 bg-emerald-50 text-emerald-600 border border-emerald-100 px-6 py-4 rounded-2xl hover:bg-emerald-100 transition-all font-medium text-xs uppercase tracking-widest shadow-sm"
-                    >
-                        <ShoppingCart className="w-4 h-4" />
-                        Grocery List
+                <div className="flex flex-col sm:flex-row flex-wrap gap-4 w-full sm:w-auto">
+                    <button onClick={() => setShowGroceryModal(true)} className="flex items-center justify-center gap-2 px-6 py-3.5 bg-emerald-50 text-emerald-600 rounded-2xl hover:bg-emerald-100 transition-all font-medium shadow-sm active:scale-95 shrink-0 w-full sm:w-auto">
+                        <ShoppingCart className="w-5 h-5" /> Grocery List
                     </button>
-                    <button 
-                         onClick={handleDownloadDirective}
-                         className="flex items-center gap-2 bg-white border border-gray-100 px-6 py-4 rounded-2xl hover:bg-gray-50 transition-all font-medium text-xs uppercase tracking-widest shadow-sm"
-                    >
-                        <Download className="w-4 h-4" />
-                        Official Directive
+                    <button onClick={handleDownloadDirective} className="flex items-center justify-center gap-2 px-6 py-3.5 bg-white border border-gray-100 text-gray-700 rounded-2xl hover:bg-gray-50 transition-all font-medium shadow-sm active:scale-95 shrink-0 w-full sm:w-auto">
+                        <Download className="w-5 h-5" /> Official Directive
                     </button>
-                    <button 
-                        onClick={handleRegenerate}
-                        disabled={isRegenerating}
-                        className="bg-gray-900 text-white px-6 py-4 rounded-2xl hover:bg-black transition-all font-medium text-xs uppercase tracking-widest shadow-sm shadow-gray-200 flex items-center gap-3"
-                    >
-                        <RefreshCw className={`w-4 h-4 ${isRegenerating && 'animate-spin'}`} />
-                        Regenerate Plan
+                    <button onClick={handleRegenerate} disabled={isRegenerating} className="flex items-center justify-center gap-2 px-6 py-3.5 bg-gray-900 text-white rounded-2xl hover:bg-black transition-all font-medium shadow-sm shadow-gray-200 active:scale-95 shrink-0 disabled:opacity-50 w-full sm:w-auto">
+                        <RefreshCw className={`w-5 h-5 ${isRegenerating ? 'animate-spin' : ''}`} /> 
+                        {isRegenerating ? 'Optimizing...' : 'Regenerate Plan'}
                     </button>
-                    <button 
-                        onClick={() => setShowConfigModal(true)}
-                        className="p-4 bg-white border border-gray-50 rounded-2xl hover:bg-gray-50 transition-all shadow-sm"
-                    >
-                        <Settings2 className="w-5 h-5 text-gray-600" />
+                    <button onClick={() => setShowConfigModal(true)} className="p-3.5 bg-white border border-gray-100 text-gray-400 hover:text-primary-600 rounded-2xl hover:bg-gray-50 transition-all shadow-sm active:scale-95 shrink-0 w-full sm:w-auto flex justify-center items-center">
+                        <Settings2 className="w-5 h-5" />
                     </button>
                 </div>
             </div>
@@ -697,7 +682,7 @@ const NutritionPlan = () => {
                             <Utensils className="w-32 h-32" />
                         </div>
                         
-                        <div className="flex items-center justify-between mb-10">
+                        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6 sm:mb-10">
                             <div>
                                 <h2 className="text-xl font-medium text-gray-800 flex items-center gap-3">
                                     Today's Regimen
@@ -707,7 +692,7 @@ const NutritionPlan = () => {
                                     <span className="text-[10px] font-medium text-gray-400 uppercase tracking-widest">Active Plan: {config.dietType}</span>
                                 </div>
                             </div>
-                            <div className="flex items-center gap-3">
+                            <div className="flex items-center gap-3 w-full sm:w-auto">
                                 <button 
                                     onClick={() => {
                                         setEditingMealIndex(null);
@@ -736,7 +721,7 @@ const NutritionPlan = () => {
                                     initial={{ opacity: 0, y: 10 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ delay: index * 0.1 }}
-                                    className="group relative flex items-center gap-8 p-6 rounded-[2rem] hover:bg-gray-50/80 transition-all border border-transparent hover:border-gray-100 shadow-hover"
+                                    className="group relative flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-8 p-6 rounded-[2rem] hover:bg-gray-50/80 transition-all border border-transparent hover:border-gray-100 shadow-hover"
                                 >
                                     <div className={`w-16 h-16 rounded-2xl flex items-center justify-center shadow-sm relative shrink-0 ${
                                         meal.type.includes('Breakfast') ? 'bg-orange-50 text-orange-500' :
@@ -785,12 +770,12 @@ const NutritionPlan = () => {
 
                     {/* Exercise Section */}
                     <div className="bg-white p-10 rounded-[2.5rem] shadow-sm ring-1 ring-gray-100">
-                        <div className="flex items-center justify-between mb-10">
+                        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6 sm:mb-10">
                             <h2 className="section-title flex items-center gap-3">
                                 <div className="p-2.5 bg-rose-50 text-rose-600 rounded-2xl"><Flame className="w-6 h-6" /></div>
                                 Active Calorie Burn
                             </h2>
-                            <div className="flex items-center gap-3">
+                            <div className="flex items-center gap-3 w-full sm:w-auto">
                                 <button 
                                     onClick={() => {
                                         setEditingExerciseIndex(null);
@@ -829,7 +814,7 @@ const NutritionPlan = () => {
                                 <span className="w-12 h-px bg-gray-100" />
                             </p>
                             {exerciseLog.map((log, exIndex) => (
-                                <div key={log.id} className="group flex items-center justify-between p-5 bg-gray-50/30 rounded-2xl border border-transparent hover:border-gray-100 transition-all shadow-hover">
+                                <div key={log.id} className="group flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-5 bg-gray-50/30 rounded-2xl border border-transparent hover:border-gray-100 transition-all shadow-hover">
                                     <div className="flex items-center gap-5">
                                         <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center shadow-sm">
                                             {log.icon ? <log.icon className="w-5 h-5 text-rose-500" /> : <Flame className="w-5 h-5 text-rose-500" />}

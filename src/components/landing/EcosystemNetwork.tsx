@@ -22,18 +22,18 @@ const EcosystemNetwork = ({ isDark }: { isDark: boolean }) => {
     ];
 
     return (
-        <section ref={ref} className={`py-40 relative ${isDark ? 'bg-[#0f172a]' : 'bg-white'}`}>
+        <section ref={ref} className={`py-16 md:py-40 relative ${isDark ? 'bg-[#0f172a]' : 'bg-white'}`}>
             <div className="container mx-auto px-6 relative z-10 text-center">
                 <AnimatedSectionHeader 
                     isDark={isDark}
                     title={
-                        <>Seamless <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">Digital Interoperability</span></>
+                        <>Seamless <br className="block md:hidden" /><span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">Digital Interoperability</span></>
                     }
                 />
 
-                <div className="relative h-[400px] md:h-[600px] w-full max-w-5xl mx-auto rounded-[3rem] overflow-hidden mt-10 md:mt-20">
+                <div className="relative h-[400px] md:h-[600px] w-full max-w-5xl mx-auto rounded-[3rem] overflow-visible md:overflow-hidden mt-10 md:mt-20">
                     {/* SVG Connections with Scroll Scrubbing */}
-                    <svg className="absolute inset-0 w-full h-full opacity-40 overflow-visible">
+                    <svg viewBox="0 0 1000 600" preserveAspectRatio="none" className="absolute inset-0 w-full h-full opacity-40 overflow-visible">
                         <motion.path 
                             d="M 100 100 C 300 100, 400 300, 500 300 C 600 300, 800 500, 900 400" 
                             stroke="url(#grad1)" 

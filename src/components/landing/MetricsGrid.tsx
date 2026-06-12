@@ -54,7 +54,7 @@ const MetricsGrid = ({ isDark }: { isDark: boolean }) => {
     ];
 
     return (
-        <section className={`py-40 relative ${isDark ? 'bg-[#0f172a]' : 'bg-gradient-to-br from-[#f0fcf9] via-teal-50/50 to-cyan-50/50'}`}>
+        <section className={`py-16 md:py-40 relative ${isDark ? 'bg-[#0f172a]' : 'bg-gradient-to-br from-[#f0fcf9] via-teal-50/50 to-cyan-50/50'}`}>
             <div className="container mx-auto px-6">
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 max-w-5xl mx-auto">
                     {metrics.map((metric, i) => (
@@ -67,7 +67,7 @@ const MetricsGrid = ({ isDark }: { isDark: boolean }) => {
                             whileHover={{ y: -10, scale: 1.05 }}
                             className={`p-10 rounded-[3rem] text-center transition-all backdrop-blur-xl border shadow-2xl ${isDark ? 'bg-white/5 border-white/10 shadow-black/20' : 'bg-white/70 border-white/80 shadow-teal-400/20 hover:shadow-teal-400/40 hover:bg-white/80'}`}
                         >
-                            <h3 className={`text-4xl md:text-5xl font-bold mb-3 tracking-tight ${isDark ? 'text-slate-200' : 'text-slate-700'}`}>
+                            <h3 className={`text-3xl sm:text-4xl md:text-5xl font-bold mb-3 tracking-tight break-words ${isDark ? 'text-slate-200' : 'text-slate-700'}`}>
                                 <AnimatedNumber value={metric.value} />
                             </h3>
                             <p className={`text-sm md:text-base uppercase tracking-widest font-bold ${isDark ? 'text-slate-400' : 'text-slate-500'}`}>

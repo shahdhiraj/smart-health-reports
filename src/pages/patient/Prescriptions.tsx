@@ -333,7 +333,7 @@ const Prescriptions = () => {
                             transition={{ type: 'spring', damping: 25, stiffness: 200 }}
                             className="bg-white w-full max-w-lg h-full shadow-sm flex flex-col"
                         >
-                            <div className="p-8 border-b border-gray-100 flex items-center justify-between">
+                            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-8 border-b border-gray-100">
                                 <div>
                                     <h3 className="card-title">Clinical History</h3>
                                     <p className="text-sm text-gray-500 font-medium">Consolidated past directives and summaries.</p>

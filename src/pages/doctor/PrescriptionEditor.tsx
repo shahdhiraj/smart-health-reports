@@ -631,7 +631,7 @@ const PrescriptionEditor = () => {
                                 </div>
                                 <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-primary-300">Clinical Intelligence</h3>
                             </div>
-                            <div className="flex items-center justify-between mb-4">
+                            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
                                 <h2 className="text-3xl font-medium tracking-tight">Active Suggestions</h2>
                                 <Button size="sm" variant="outline" className="text-[10px] uppercase tracking-widest bg-white/5 border-white/10 text-primary-300 hover:bg-white/10 hover:text-white transition-all py-1.5 px-3">
                                     Run IQ Diagnostics
@@ -709,7 +709,7 @@ const PrescriptionEditor = () => {
 
                                     if (suggestions.length === 0) {
                                         return (
-                                            <div className="col-span-2 p-6 bg-white/5 rounded-3xl border border-white/10 italic text-primary-300 text-sm flex items-center justify-between">
+                                            <div className="col-span-2 p-6 bg-white/5 rounded-3xl border border-white/10 italic text-primary-300 text-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                                                 <span>No critical metabolic markers out of range. Maintain current healthy baseline.</span>
                                                 <button className="text-[10px] font-semibold text-primary-400 hover:text-white uppercase tracking-widest transition-colors pl-4">
                                                     Manual Re-scan
@@ -822,14 +822,14 @@ const PrescriptionEditor = () => {
                             </h4>
                             <div className="space-y-5">
                                 <div className="grid grid-cols-1 gap-3">
-                                    <div className="p-4 bg-primary-50/40 rounded-3xl border border-primary-100 flex items-center justify-between">
+                                    <div className="p-4 bg-primary-50/40 rounded-3xl border border-primary-100 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                                         <p className="text-[10px] text-primary-700 font-bold uppercase tracking-widest">Blood Pressure</p>
                                         <p className="text-xl font-bold text-gray-900 tracking-tighter">{patientInfo.vitals.bp}</p>
                                     </div>
                                     <BMIGauge bmi={Number(patientInfo.vitals.bmi || 0)} showTitle={true} />
                                 </div>
                                 <div className="p-5 bg-rose-50/30 rounded-2xl border border-rose-100/50">
-                                    <p className="text-[10px] text-rose-700 font-medium uppercase tracking-wider mb-2 flex items-center justify-between">
+                                    <p className="text-[10px] text-rose-700 font-medium uppercase tracking-wider mb-2 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                                         Known Allergies
                                         <span className="w-2 h-2 bg-rose-400 rounded-full animate-ping" />
                                     </p>
@@ -933,7 +933,7 @@ const PrescriptionEditor = () => {
                                                                         handleChange(index, 'name', opt);
                                                                         setFocusedIndex(null);
                                                                     }}
-                                                                    className="w-full flex items-center justify-between px-4 py-3.5 hover:bg-primary-50 rounded-xl transition-colors group/opt"
+                                                                    className="w-full flex flex-col sm:flex-row sm:items-center justify-between gap-4 px-4 py-3.5 hover:bg-primary-50 rounded-xl transition-colors group/opt"
                                                                 >
                                                                     <div className="flex items-center gap-3">
                                                                         <div className="w-8 h-8 bg-gray-50 rounded-lg flex items-center justify-center group-hover/opt:bg-white">
@@ -952,7 +952,7 @@ const PrescriptionEditor = () => {
                                                                         saveChoice(searchTerm);
                                                                         setFocusedIndex(null);
                                                                     }}
-                                                                    className="w-full flex items-center justify-between px-4 py-4 bg-primary-50/50 hover:bg-primary-50 rounded-xl transition-colors border border-dashed border-primary-200 mt-2"
+                                                                    className="w-full flex flex-col sm:flex-row sm:items-center justify-between gap-4 px-4 py-4 bg-primary-50/50 hover:bg-primary-50 rounded-xl transition-colors border border-dashed border-primary-200 mt-2"
                                                                 >
                                                                     <div className="flex items-center gap-3">
                                                                         <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center">
@@ -1081,7 +1081,7 @@ const PrescriptionEditor = () => {
 
                     {/* Diagnostic Advice */}
                     <div className="bg-white p-6 rounded-3xl border border-gray-100 shadow-sm">
-                        <div className="flex items-center justify-between mb-8">
+                        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
                             <div className="flex items-center gap-4">
                                 <div className="w-12 h-12 bg-primary-50 rounded-xl flex items-center justify-center text-primary-500">
                                     <Activity className="w-6 h-6" />
@@ -1174,7 +1174,7 @@ const PrescriptionEditor = () => {
                 {/* Preview Side */}
                 <div className="xl:col-span-5 hidden xl:block print:block">
                     <div className="sticky top-10">
-                        <div className="flex items-center justify-between mb-6 px-6 print:hidden">
+                        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 px-6 print:hidden">
                             <div className="flex items-center gap-3">
                                 <div className="w-2.5 h-2.5 bg-primary-500 rounded-full animate-pulse shadow-[0_0_12px_rgba(0,164,167,0.5)]" />
                                 <h3 className="text-[11px] font-medium text-gray-400 uppercase tracking-[0.2em]">Official E-Prescription</h3>

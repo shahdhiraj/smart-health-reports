@@ -3,13 +3,13 @@ import { Watch, Pill, Globe, Smartphone } from 'lucide-react';
 
 const FutureIntegrations = ({ isDark }: { isDark: boolean }) => {
     return (
-        <section className={`py-32 relative overflow-hidden ${isDark ? 'bg-[#020817]' : 'bg-white'}`}>
+        <section className={`py-16 md:py-32 relative overflow-hidden ${isDark ? 'bg-[#020817]' : 'bg-white'}`}>
             <div className="container mx-auto px-6 text-center">
                 <motion.h2 
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className={`text-[54px] leading-tight font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}
+                    className={`text-3xl sm:text-4xl md:text-[54px] leading-tight font-bold mb-4 md:mb-6 break-words ${isDark ? 'text-white' : 'text-gray-900'}`}
                 >
                     The Future is <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">Interconnected</span>
                 </motion.h2>

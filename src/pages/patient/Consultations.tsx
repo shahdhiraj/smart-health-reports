@@ -97,7 +97,7 @@ const Consultations = () => {
                             exit={{ opacity: 0, scale: 0.9, y: 20 }}
                             className="relative bg-white w-full max-w-lg rounded-3xl shadow-sm overflow-hidden overflow-y-auto max-h-[90vh]"
                         >
-                            <div className="p-8 border-b border-gray-50 flex items-center justify-between">
+                            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-8 border-b border-gray-50">
                                 <div>
                                     <h2 className="section-title">Book Virtual Consult</h2>
                                     <p className="text-gray-500 text-sm font-medium mt-1 italic">Select a clinical specialist to begin.</p>

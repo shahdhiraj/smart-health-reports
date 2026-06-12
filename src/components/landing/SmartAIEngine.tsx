@@ -68,7 +68,7 @@ const SmartAIEngine = ({ isDark }: { isDark: boolean }) => {
     ];
 
     return (
-        <section className={`py-40 relative ${isDark ? 'bg-[#0f172a]' : 'bg-[#f8fafc]'}`}>
+        <section className={`py-16 md:py-40 relative ${isDark ? 'bg-[#0f172a]' : 'bg-[#f8fafc]'}`}>
             <div className="container mx-auto px-6">
                 <div className="flex flex-col xl:flex-row items-center gap-16">
                     <div className="xl:w-1/2">

@@ -252,7 +252,7 @@ const MedicalReports = () => {
                     <h1 className="page-title">Medical Reports</h1>
                     <p className="page-subtitle">Upload, manage, and understand your medical history with AI.</p>
                 </div>
-                <div className="flex gap-4">
+                <div className="flex flex-wrap gap-4 w-full sm:w-auto">
                     <button
                         onClick={() => setActiveTab('timeline')}
                         className={`px-6 py-3 rounded-2xl font-medium transition-all shadow-sm active:scale-95 flex items-center gap-2 ${activeTab === 'timeline'
@@ -448,7 +448,7 @@ const MedicalReports = () => {
                                                 "{report.summary}"
                                             </p>
                                             
-                                            <div className="flex items-center justify-between">
+                                            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                                                 <div className="flex items-center gap-5">
                                                     <span className="flex items-center gap-1.5 text-[9px] font-medium text-emerald-600 bg-emerald-50 px-3 py-1.5 rounded-full uppercase tracking-widest border border-emerald-100/50">
                                                         <Brain className="w-3 h-3" />
@@ -613,7 +613,7 @@ const MedicalReports = () => {
                                                         const colors = colorMap[val.status] || colorMap['Normal'];
                                                         
                                                         return (
-                                                            <div key={i} className={`flex items-center justify-between p-4 ${i !== 0 ? 'border-t border-gray-100' : ''}`}>
+                                                            <div key={i} className={`flex flex-col sm:flex-row sm:items-center justify-between gap-2 p-4 ${i !== 0 ? 'border-t border-gray-100' : ''}`}>
                                                                 <div>
                                                                     <p className="text-xl font-normal text-gray-700">{val.marker}</p>
                                                                     <div className="flex items-center gap-2 mt-1">

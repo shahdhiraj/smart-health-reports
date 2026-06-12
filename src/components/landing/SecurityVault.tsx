@@ -4,7 +4,7 @@ import AnimatedSectionHeader from './ui/AnimatedSectionHeader';
 
 const SecurityVault = ({ isDark }: { isDark: boolean }) => {
     return (
-        <section className={`py-32 relative ${isDark ? 'bg-[#020817]' : 'bg-white'}`}>
+        <section className={`py-16 md:py-32 relative ${isDark ? 'bg-[#020817]' : 'bg-white'}`}>
             <div className="container mx-auto px-6 flex flex-col md:flex-row-reverse items-center gap-16">
                 
                 <div className="md:w-1/2 flex justify-center perspective-1000">

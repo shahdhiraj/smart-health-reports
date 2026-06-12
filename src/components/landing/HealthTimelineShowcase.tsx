@@ -20,7 +20,7 @@ const HealthTimelineShowcase = ({ isDark }: { isDark: boolean }) => {
     const xTransform = useTransform(scrollYProgress, [0, 1], ["5%", "-15%"]);
 
     return (
-        <section ref={containerRef} className={`py-32 relative overflow-hidden ${isDark ? 'bg-[#0f172a]' : 'bg-[#f8fafc]'}`}>
+        <section ref={containerRef} className={`py-16 md:py-32 relative overflow-hidden ${isDark ? 'bg-[#0f172a]' : 'bg-[#f8fafc]'}`}>
             {/* Ambient Background Glows */}
             <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-primary-500/10 rounded-full blur-[100px] pointer-events-none" />
             <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-emerald-500/10 rounded-full blur-[100px] pointer-events-none" />
@@ -30,7 +30,7 @@ const HealthTimelineShowcase = ({ isDark }: { isDark: boolean }) => {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className={`text-[54px] leading-tight font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}
+                    className={`text-3xl sm:text-4xl md:text-[54px] leading-tight font-bold mb-4 md:mb-6 break-words ${isDark ? 'text-white' : 'text-gray-900'}`}
                 >
                     A Lifetime of <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">Health. Connected.</span>
                 </motion.h2>

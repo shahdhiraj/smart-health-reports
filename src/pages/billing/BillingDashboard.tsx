@@ -162,7 +162,7 @@ const BillingDashboard = () => {
                                             </div>
                                         </div>
 
-                                        <div className="flex flex-1 gap-8 px-4 justify-around">
+                                        <div className="flex flex-wrap flex-1 gap-4 md:gap-8 px-2 md:px-4 justify-around">
                                             <div className="text-center">
                                                 <p className="text-[10px] font-medium text-gray-400 uppercase">Consultation</p>
                                                 <p className="text-sm font-medium text-gray-700">${inv.details.consultFee}</p>

@@ -27,7 +27,7 @@ const VoiceAssistant = ({ isDark }: { isDark: boolean }) => {
     }, [isListening, hoveredIndex]);
 
     return (
-        <section className={`py-20 md:py-32 relative overflow-hidden transition-colors duration-700 ${isDark ? 'bg-[#020817]/50' : 'bg-primary-50/50'}`}>
+        <section className={`py-16 md:py-32 relative overflow-hidden transition-colors duration-700 ${isDark ? 'bg-[#020817]/50' : 'bg-primary-50/50'}`}>
             <div className="container mx-auto px-6 flex flex-col md:flex-row items-center gap-10 md:gap-16 relative z-10">
                 
                 {/* Interactive Microphone Visualization */}
@@ -107,7 +107,7 @@ const VoiceAssistant = ({ isDark }: { isDark: boolean }) => {
                         initial={{ opacity: 0, x: 30 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        className={`text-4xl md:text-[54px] leading-tight font-extrabold mb-6 ${isDark ? 'text-white' : 'text-slate-900'}`}
+                        className={`text-3xl sm:text-4xl md:text-[54px] leading-tight font-extrabold mb-4 md:mb-6 break-words ${isDark ? 'text-white' : 'text-slate-900'}`}
                     >
                         Meet Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">Multilingual Voice Assistant</span>
                     </motion.h2>

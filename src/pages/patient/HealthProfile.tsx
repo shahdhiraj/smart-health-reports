@@ -118,7 +118,7 @@ const HealthProfile = () => {
     }, [healthData.medications.length]);
 
     const SectionHeader = ({ icon: Icon, title, color }: { icon: any, title: string, color: string }) => (
-        <div className="flex items-center justify-between mb-6 border-b border-gray-100 pb-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 border-b border-gray-100 pb-4">
             <h2 className="text-xl font-medium text-gray-800 flex items-center gap-3">
                 <div className={`p-2 bg-${color}-50 rounded-lg text-${color}-600`}>
                     <Icon className="w-5 h-5" />
@@ -709,7 +709,7 @@ const HealthProfile = () => {
                     animate={{ opacity: 1, y: 0 }}
                     className="lg:col-span-12 bg-white p-8 rounded-3xl shadow-sm"
                 >
-                    <div className="flex items-center justify-between mb-8 pb-4 border-b border-gray-100">
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 pb-4 border-b border-gray-100">
                         <SectionHeader icon={FileText} title="Laboratory & Clinical Reports" color="indigo" />
                         <div className="flex items-center gap-3">
                             <button 
@@ -809,7 +809,7 @@ const HealthProfile = () => {
                                     <p className="text-sm font-medium text-gray-300 uppercase tracking-widest">No Markers Synced.</p>
                                 </div>
                             ) : healthData.labResults.map((lab, index) => (
-                                <div key={index} className="flex items-center justify-between p-4 bg-white rounded-2xl shadow-sm transition-all hover:border-primary-200">
+                                <div key={index} className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-4 bg-white rounded-2xl shadow-sm transition-all hover:border-primary-200">
                                     <div className="flex items-center gap-3">
                                         <div className={`w-10 h-10 rounded-xl flex items-center justify-center font-medium text-[10px] ${
                                             lab.status === 'Normal' ? 'bg-emerald-50 text-emerald-600' : 'bg-amber-50 text-amber-600'

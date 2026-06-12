@@ -33,6 +33,11 @@ body {
   min-width: 320px;
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+html {
+  overflow-x: hidden;
 }
 
 /* Aggressively neutralize rogue focus outlines and black borders */
@@ -118,7 +123,7 @@ h1, h2, h3, h4, h5, h6 {
   }
   
   .page-subtitle {
-    @apply text-gray-500 mt-2 font-normal text-sm md:text-base flex items-center gap-2;
+    @apply text-gray-500 mt-2 font-normal text-sm md:text-base flex flex-wrap items-center gap-2;
   }
 
   /* Section-level headers */

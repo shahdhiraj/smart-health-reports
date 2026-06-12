@@ -81,7 +81,7 @@ const PrivacySettings = () => {
 
             {/* End-to-End Encryption Banner */}
             <div className="bg-gradient-to-r from-emerald-600 to-emerald-800 rounded-3xl p-8 text-white flex flex-col md:flex-row items-center justify-between gap-6 mb-12 shadow-sm shadow-emerald-500/20">
-                <div className="flex items-start gap-6">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
                     <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center backdrop-blur-md shrink-0">
                         <ShieldCheck className="w-8 h-8 text-white" />
                     </div>
@@ -194,14 +194,14 @@ const PrivacySettings = () => {
                                     </div>
                                 </div>
 
-                                <div className="flex flex-wrap items-center gap-4">
+                                <div className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-4 mt-4 md:mt-0 w-full md:w-auto">
                                     {/* Scope Dropdown */}
-                                    <div className="relative group">
+                                    <div className="relative group w-full sm:w-auto">
                                         <label className="absolute -top-2 left-3 bg-white px-1 text-[10px] font-medium text-gray-400 uppercase tracking-widest z-10">Access Scope</label>
                                         <select 
                                             value={doc.scope}
                                             onChange={(e) => handleUpdateControl(doc.id, 'scope', e.target.value)}
-                                            className="appearance-none bg-gray-50 border border-gray-50 text-gray-700 font-medium py-3 pl-4 pr-10 rounded-xl focus:outline-none focus:border-primary-500 transition-colors w-40 cursor-pointer"
+                                            className="appearance-none bg-gray-50 border border-gray-50 text-gray-700 font-medium py-3 pl-4 pr-10 rounded-xl focus:outline-none focus:border-primary-500 transition-colors w-full sm:w-40 cursor-pointer"
                                         >
                                             <option>All Records</option>
                                             <option>Lab Reports Only</option>
@@ -212,12 +212,12 @@ const PrivacySettings = () => {
                                     </div>
 
                                     {/* Duration Dropdown */}
-                                    <div className="relative group">
+                                    <div className="relative group w-full sm:w-auto">
                                         <label className="absolute -top-2 left-3 bg-white px-1 text-[10px] font-medium text-gray-400 uppercase tracking-widest z-10">Duration</label>
                                         <select 
                                             value={doc.duration}
                                             onChange={(e) => handleUpdateControl(doc.id, 'duration', e.target.value)}
-                                            className="appearance-none bg-gray-50 border border-gray-50 text-gray-700 font-medium py-3 pl-4 pr-10 rounded-xl focus:outline-none focus:border-primary-500 transition-colors w-36 cursor-pointer"
+                                            className="appearance-none bg-gray-50 border border-gray-50 text-gray-700 font-medium py-3 pl-4 pr-10 rounded-xl focus:outline-none focus:border-primary-500 transition-colors w-full sm:w-36 cursor-pointer"
                                         >
                                             <option>5 Mins</option>
                                             <option>15 Mins</option>
@@ -231,10 +231,11 @@ const PrivacySettings = () => {
 
                                     <button 
                                         onClick={() => handleRevoke(doc.id)}
-                                        className="p-3 bg-rose-50 text-rose-600 hover:bg-rose-600 hover:text-white rounded-xl border border-rose-100 transition-colors flex items-center justify-center shrink-0"
+                                        className="p-3 bg-rose-50 text-rose-600 hover:bg-rose-600 hover:text-white rounded-xl border border-rose-100 transition-colors flex items-center justify-center shrink-0 w-full sm:w-auto mt-2 sm:mt-0"
                                         title="Revoke Access"
                                     >
                                         <UserX className="w-5 h-5" />
+                                        <span className="sm:hidden ml-2 font-medium">Revoke Access</span>
                                     </button>
                                 </div>
                             </div>

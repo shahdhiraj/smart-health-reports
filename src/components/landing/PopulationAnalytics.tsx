@@ -68,7 +68,7 @@ const PopulationAnalytics = ({ isDark }: { isDark: boolean }) => {
     const [activeNode, setActiveNode] = useState<number | null>(null);
 
     return (
-        <section className={`py-32 relative overflow-hidden ${isDark ? 'bg-[#020817]' : 'bg-[#0f172a]'}`}>
+        <section className={`py-16 md:py-32 relative overflow-hidden ${isDark ? 'bg-[#020817]' : 'bg-[#0f172a]'}`}>
             {/* Background elements */}
             <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80')] opacity-5 mix-blend-screen bg-cover bg-center" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a] via-transparent to-[#0f172a]" />
@@ -81,7 +81,7 @@ const PopulationAnalytics = ({ isDark }: { isDark: boolean }) => {
                     viewport={{ once: true }}
                     className="mb-20"
                 >
-                    <h2 className="text-[54px] leading-tight font-bold mb-6 text-white tracking-tight">
+                    <h2 className="text-3xl sm:text-4xl md:text-[54px] leading-tight font-bold mb-4 md:mb-6 text-white tracking-tight break-words">
                         Command Center for <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">Population Health</span>
                     </h2>
                     <p className="text-xl max-w-3xl mx-auto text-slate-400">

@@ -16,7 +16,7 @@ const FinalCTA = ({ isDark }: { isDark: boolean }) => {
     };
 
     return (
-        <section className="py-20 md:py-40 relative overflow-hidden">
+        <section className="py-16 md:py-40 relative overflow-hidden">
             {/* Massive bouncy background sphere */}
             <motion.div 
                 animate={{ scale: [1, 1.05, 1], rotate: 360 }}
@@ -32,7 +32,7 @@ const FinalCTA = ({ isDark }: { isDark: boolean }) => {
                     transition={{ type: "spring", stiffness: 100, damping: 20 }}
                     className="max-w-5xl mx-auto"
                 >
-                    <h2 className={`text-5xl md:text-7xl lg:text-8xl font-bold mb-6 ${isDark ? 'text-white' : 'text-slate-900'}`}>
+                    <h2 className={`text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold mb-4 md:mb-6 break-words ${isDark ? 'text-white' : 'text-slate-900'}`}>
                         Let's Build the <br className="hidden md:block" />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-primary-500">Future.</span>
                     </h2>

@@ -57,12 +57,12 @@ const PatientDashboard = () => {
 
     return (
         <div className="w-full pb-8">
-            <div className="mb-10 flex justify-between items-end">
+            <div className="mb-8 md:mb-10 flex flex-col sm:flex-row justify-between items-start sm:items-end gap-6 sm:gap-0">
                 <div>
                     <motion.h1 
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
-                        className="page-title"
+                        className="page-title text-3xl sm:text-4xl"
                     >
                         Patient Dashboard
                     </motion.h1>
@@ -70,7 +70,7 @@ const PatientDashboard = () => {
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: 0.1 }}
-                        className="text-gray-500 mt-2 font-light text-lg"
+                        className="text-gray-500 mt-2 font-light text-base sm:text-lg"
                     >
                         Good morning, John! ☀️ Here's your daily health summary.
                     </motion.p>
@@ -79,7 +79,7 @@ const PatientDashboard = () => {
                     onClick={() => navigate('/patient/consultations')}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="flex items-center gap-2 bg-gradient-to-tr from-primary-600 to-primary-400 text-white px-6 py-3 rounded-2xl text-sm font-semibold hover:from-primary-500 hover:to-primary-300 transition-all shadow-lg shadow-primary-500/30 hover:shadow-primary-500/50 group"
+                    className="flex items-center gap-2 bg-gradient-to-tr from-primary-600 to-primary-400 text-white px-6 py-3 rounded-2xl text-sm font-semibold hover:from-primary-500 hover:to-primary-300 transition-all shadow-lg shadow-primary-500/30 hover:shadow-primary-500/50 group w-full sm:w-auto justify-center"
                 >
                     Book Consultation
                     <Calendar className="w-4 h-4 group-hover:scale-110 transition-transform" />
@@ -296,7 +296,7 @@ const PatientDashboard = () => {
                             <motion.div 
                                 key={i} 
                                 whileHover={{ scale: 1.02, backgroundColor: '#f8fafc' }}
-                                className="flex items-center justify-between p-4 rounded-2xl transition-all cursor-pointer bg-white"
+                                className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-4 rounded-2xl transition-all cursor-pointer bg-white"
                             >
                                 <div className="flex items-center gap-4">
                                     <div className={`w-12 h-12 bg-${apt.color}-50 rounded-2xl flex items-center justify-center text-${apt.color}-500 font-medium text-sm`}>

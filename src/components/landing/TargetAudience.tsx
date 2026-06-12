@@ -64,7 +64,7 @@ const TargetAudience = ({ isDark }: { isDark: boolean }) => {
     ];
 
     return (
-        <section className={`py-32 relative overflow-hidden ${isDark ? 'bg-[#020817]/50' : 'bg-[#f8fafc]'}`}>
+        <section className={`py-16 md:py-32 relative overflow-hidden ${isDark ? 'bg-[#020817]/50' : 'bg-[#f8fafc]'}`}>
             {/* Background Decorations */}
             <div className="absolute top-0 right-0 -mt-20 -mr-20 w-96 h-96 bg-primary-500/5 rounded-full blur-[100px] pointer-events-none" />
             <div className="absolute bottom-0 left-0 -mb-20 -ml-20 w-96 h-96 bg-blue-500/5 rounded-full blur-[100px] pointer-events-none" />

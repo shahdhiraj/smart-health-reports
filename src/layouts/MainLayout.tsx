@@ -213,7 +213,7 @@ const MainLayout = () => {
             </AnimatePresence>
 
         {/* Main Content */}
-            <main className={`flex-1 transition-all duration-300 ${isSidebarOpen ? 'md:ml-[280px]' : 'md:ml-[80px]'} ml-0`}>
+            <main className={`flex-1 min-w-0 flex flex-col transition-all duration-300 ${isSidebarOpen ? 'md:ml-[280px]' : 'md:ml-[80px]'} ml-0`}>
                 {/* Top Header */}
                 <header className="bg-white/80 backdrop-blur-md sticky top-0 z-20 border-b border-gray-200 px-4 md:px-16 lg:px-24 py-4 flex items-center justify-between">
                     
@@ -225,7 +225,7 @@ const MainLayout = () => {
                             <Menu className="w-6 h-6" />
                         </button>
                     </div>
-                    <div className="flex items-center gap-4">
+                    <div className="flex items-center gap-2 sm:gap-4">
                         <button 
                             onClick={() => {
                                 resetToDefault();
